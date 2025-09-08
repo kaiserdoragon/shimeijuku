@@ -3,6 +3,9 @@
   <div class="top_mv">
     <p>知る、<br>考える、<br>力になる</p>
     <img src="<?php echo get_template_directory_uri(); ?>/img/top/mv.jpg" alt="" width="1920" height="971">
+    <div class="top_mv--scroll">
+      <span>Scroll</span>
+    </div>
   </div>
 
 
