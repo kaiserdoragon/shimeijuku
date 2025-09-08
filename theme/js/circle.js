@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
     particles: {
       //シェイプの数
       number: {
-        value: 50, //シェイプの数
+        value: 500, //シェイプの数
         density: {
           enable: true, //密度を変更する
           value_area: 5000, //密集度
@@ -269,7 +269,7 @@ window.addEventListener("load", function () {
     particles: {
       //シェイプの数
       number: {
-        value: 1000, //シェイプの数
+        value: 500, //シェイプの数
         density: {
           enable: true, //密度を変更する
           value_area: 5000, //密集度
