@@ -110,6 +110,15 @@ function header_style_script()
     wp_register_script('animation', get_template_directory_uri() . '/js/animation.js', array('jquery'));
     wp_enqueue_script('animation');
 
+    wp_register_script('circle', get_template_directory_uri() . '/js/circle.js', array('jquery'));
+    wp_enqueue_script('circle');
+
+    wp_register_script('particles', get_template_directory_uri() . '/js/particles.js', array('jquery'));
+    wp_enqueue_script('particles');
+
+    wp_register_script('app', get_template_directory_uri() . '/js/app.js', array('jquery'));
+    wp_enqueue_script('app');
+
     // ページ専用jsの読み込みが必要な時は下記のように使う。
     //    wp_register_script('scriptname', get_template_directory_uri().'/js/scriptname.js', array('jquery'));
     //    wp_register_style('stylename', get_template_directory_uri().'/css/stylename.css', array());
@@ -131,7 +140,7 @@ add_action('wp_enqueue_scripts', 'header_style_script');
 //★deferだと動作しない場合は、jquery-coreについてはdeferをやめると良い。
 function add_defer_script($tag, $handle, $url)
 {
-  if ('jquery-migrate' === $handle || 'mainscripts' === $handle || 'slider' === $handle || 'animation' === $handle) {
+  if ('jquery-migrate' === $handle || 'mainscripts' === $handle || 'slider' === $handle || 'animation' === $handle || 'particles' === $handle || 'app' === $handle || 'circle' === $handle) {
     $tag = '<script src="' . esc_url($url) . '" defer></script>';
   }
   return $tag;

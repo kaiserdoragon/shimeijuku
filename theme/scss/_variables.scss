@@ -5,6 +5,7 @@
 // ここから変数
 // ---------------------------------------------
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap");
 
 // color
 $color-black: #333; // 本文のテキスト用
@@ -20,6 +21,7 @@ $footer_gradation: linear-gradient(90deg, #72f1ff 0%, #72c9ff 33.65%, #2084f0 10
 // font
 $font-sans: "Noto Sans JP", sans-serif;
 $font-din: "din-2014", sans-serif;
+$font-zen: "Zen Kaku Gothic New", sans-serif;
 
 // font-size
 :root {

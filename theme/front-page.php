@@ -6,8 +6,81 @@
     <div class="top_mv--scroll">
       <span>Scroll</span>
     </div>
-  </div>
+    <div class="outline1">
+      <div id="particles1-js"></div>
+    </div>
 
+    <div class="outline2">
+      <div id="particles2-js"></div>
+    </div>
+
+    <div class="outline3">
+      <div id="particles3-js"></div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
   <h2 class="ttl_sec">Contact</h2>
   <h2 class="ttl_sec -md">Pik up News,</h2>
