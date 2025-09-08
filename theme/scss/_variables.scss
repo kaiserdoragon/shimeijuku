@@ -7,15 +7,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
 
 // color
-$color-body: #000; // 本文のテキスト用
-$color-primary: #008080; // サイト内で１番よく使う色、ベースカラー
-$color-secondary: #fafad2; // サイト内で２番目に使う色、サブカラー
-$color-accent: #ff6347; // サイト内で３番目に使う色、アクセントカラー
+$color-black: #333; // 本文のテキスト用
+$color-blue1: #001f63;
+$color-blue2: #0b41a0;
+$color-blue3: #2084f0;
+$color-accent: #ff6347;
+$color-ttlsec: #b7b7b7;
+$color-ttl1: #e3e3e3; // 英語の灰色の見出し
+$color-ttl2: #e4f5ff; // 英語の水色の見出し
+$footer_gradation: linear-gradient(90deg, #72f1ff 0%, #72c9ff 33.65%, #2084f0 100%); // footerの青いグラデーション
 
 // font
 $font-sans: "Noto Sans JP", sans-serif;
-$font-yugo: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", sans-serif;
-$font-yumin: "YuMincho", "Yu Mincho", "游明朝体", "Hiragino Mincho Pro", "ヒラギノ明朝 Pro", "MS P明朝", "MS PMincho", "Times New Roman", serif;
+$font-din: "din-2014", sans-serif;
 
 // font-size
 :root {
@@ -25,6 +29,8 @@ $font-yumin: "YuMincho", "Yu Mincho", "游明朝体", "Hiragino Mincho Pro", "�
     --fz#{$var}: min(calc(0.1rem * #{$var}), calc(0.1vw * #{$var} * var(--invariants)));
   }
 }
+
+
 
 // ---------------------------------------------
 // ここまで

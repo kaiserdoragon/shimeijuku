@@ -89,7 +89,7 @@
       span::after {
         color: #fff;
         content: "必須";
-        background: $color-secondary;
+        background: $color-blue2;
       }
     }
   }
@@ -180,13 +180,13 @@
     color: #fff;
     letter-spacing: 0.1em;
     cursor: pointer;
-    background: $color-secondary;
+    background: $color-blue2;
     border: none;
     border-radius: 45px;
     transition: 0.3s;
 
     &:hover {
-      background-color: $color-primary;
+      background-color: $color-blue1;
       opacity: 0.8;
     }
 

@@ -5,6 +5,20 @@
 //  トップ専用
 // ---------------------------------------------
 
+.top_mv {
+  position: relative;
+
+  p {
+    position: absolute;
+    bottom: 0.8854166666666666vw;
+    left: 3.4895833333333335vw;
+    font-size: 5vw;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #fff;
+  }
+}
+
 /* 見やすくするためのcss 不要のためコピーしなくてOK */
 .swiper {
   max-width: 300px;

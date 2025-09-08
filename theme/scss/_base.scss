@@ -15,7 +15,8 @@ body {
   font-size: var(--fz16);
   font-weight: 400; // ※游ゴシックのときは500
   line-height: 1.6;
-  color: $color-body;
+  color: $color-black;
+  letter-spacing: 0.05em;
 }
 
 // font-sizeは下記の用に指定
@@ -90,6 +91,26 @@ main {
 //  ヘッダー関連 header
 // ---------------------------------------------
 
+.header {
+  position: relative;
+  z-index: 1;
+
+  // .header--inner
+  &--inner {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    display: flex;
+  }
+
+  // .header--logo
+  &--logo {
+    a {
+      display: block;
+    }
+  }
+}
+
 // ---------------------------------------------
 //  グローバルナビゲーション関連 gnav
 // ---------------------------------------------
@@ -103,7 +124,7 @@ main {
   width: 44px;
   height: 44px;
   cursor: pointer;
-  background: $color-primary;
+  background: $color-blue1;
   border: solid 2px #fff;
 
   span {
@@ -159,14 +180,25 @@ main {
   display: block;
 
   ul {
+    position: fixed;
+    top: 30px;
+    left: 50%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 1.9791666666666665vw;
+    justify-content: center;
+    width: 46.875vw;
+    background: rgba(#fff, 0.8);
+    border-radius: 30px;
+    transform: translateX(-50%);
   }
 
   a {
     display: block;
-    padding: 15px 0;
+    padding: 18px 0;
+    font-size: 0.7291666666666666vw;
+    font-weight: bold;
+    color: #24243f;
   }
 
   @include max-mq {

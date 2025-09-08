@@ -1,13 +1,14 @@
 <?php get_header(); ?>
 <main>
   <div class="top_mv">
-    メインビジュアルなど
+    <p>知る、<br>考える、<br>力になる</p>
+    <img src="<?php echo get_template_directory_uri(); ?>/img/top/mv.jpg" alt="" width="1920" height="971">
   </div>
 
-  <section>
-    <h2>見出し</h2>
-    <p>トップページに設置したい静的コンテンツはここに書きましょう </p>
-  </section>
+
+  <h2 class="ttl_sec">Contact</h2>
+  <h2 class="ttl_sec -md">Pik up News,</h2>
+
 
   <section class="top_info">
     <h2 class="top_info--ttl">お知らせ</h2>
@@ -32,21 +33,7 @@
     <?php wp_reset_postdata(); ?>
   </section>
 
-  <section class="top_about">
-    <h2 class="top_about--ttl">使い方</h2>
-    <p class="top_about--paragraph">テンプレートファイルの中のHTMLやCSSを変更して、オリジナルのデザインを作りましょう。<br> テンプレートは国際化しておらず、ほとんど日本語で書かれています。<br></p>
-    <h3 class="top_about--ttl">テンプレート</h3>
-    <p class="top_about--paragraph">小規模なコーポレートサイト用の構成です。足したり引いたりして自由に改造しましょう。</p>
-    <h3 class="top_about--ttl">CSSやJavaScript</h3>
-    <h4 class="top_about--ttl">CSS</h4>
-    <p class="top_about--paragraph">/css/style.css 、/css/reset.css を読み込むようにしています<br> 追加のCSSファイルを読み込むときは、functions.phpを確認してください。 </p>
-    <h4 class="top_about--ttl">JavaScript</h4>
-    <p class="top_about--paragraph">/js/scripts.js を読み込むようにしています<br> 追加のJavaScriptファイルを読み込むときは、functions.phpを確認してください。 </p>
-    <h4 class="top_about--ttl">Favicon</h4>
-    <p class="top_about--paragraph">img/icon/favicon.ico　と　img/icon/apple-touch-icon.png　は変更して使ってください。 </p>
-    <h3 class="top_about--ttl">プラグイン</h3>
-    <p class="top_about--paragraph">テーマを適用すると、管理画面に推奨プラグインのインストールメッセージが表示されます。<br>使いたい機能があればそこから入れると簡単です。 </p>
-  </section>
+
 
   <div class="swiper">
     <div class="swiper-wrapper">
