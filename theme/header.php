@@ -19,22 +19,23 @@
 					<a href="<?php echo esc_url(home_url('/')); ?>">
 						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/img/common/logo.svg" alt="目標を達成する力を子供たちへ　真明塾" width="194" height="65">
 					</a>
-
 				</h1>
-				<button id="js-gnav_btn" class="gnav_btn" aria-label="メニューを開く" aria-controls="js-gnav" aria-expanded="false">
-					<span aria-hidden="true"></span>
-					<span aria-hidden="true"></span>
-					<span aria-hidden="true"></span>
+				<button class="hamburger-overlay" aria-label="メニュー" aria-controls="overlay-menu" aria-expanded="false">
+					<span class="hamburger-overlay__line"></span>
+					<span class="hamburger-overlay__line"></span>
+					<span class="hamburger-overlay__line"></span>
 				</button>
-				<nav id="js-gnav" class="gnav" aria-label="メインナビゲーション">
-					<ul>
-						<li><a href="<?php echo esc_url(home_url('/features')); ?>">真明塾の特徴</a></li>
-						<li><a href="<?php echo esc_url(home_url('/courses')); ?>">コース紹介</a></li>
-						<li><a href="<?php echo esc_url(home_url('/policy')); ?>">指導方針</a></li>
-						<li><a href="<?php echo esc_url(home_url('/testimonials')); ?>">塾生の声</a></li>
-						<li><a href="<?php echo esc_url(home_url('/trial')); ?>">無料体験授業</a></li>
-						<li><a href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a></li>
-					</ul>
+				<nav id="overlay-menu" class="gnav nav-overlay" aria-label="メインナビゲーション" aria-hidden="true">
+					<div class="nav-overlay__content">
+						<ul class="nav-overlay__list">
+							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/features')); ?>">真明塾の特徴</a></li>
+							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/courses')); ?>">コース紹介</a></li>
+							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/policy')); ?>">指導方針</a></li>
+							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/testimonials')); ?>">塾生の声</a></li>
+							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/trial')); ?>">無料体験授業</a></li>
+							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a></li>
+						</ul>
+					</div>
 				</nav>
 			</div>
 		</header>

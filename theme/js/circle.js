@@ -1,6 +1,6 @@
 window.addEventListener("load", function () {
   //下記particles-js↓のところはHTMLで指定したidと合わせてください
-  particlesJS("particles1-js", {
+  particlesJS("js-particle_lefttop", {
     //パーティクルの設定
     particles: {
       //シェイプの数
@@ -132,7 +132,7 @@ window.addEventListener("load", function () {
 
 window.addEventListener("load", function () {
   //下記particles-js↓のところはHTMLで指定したidと合わせてください
-  particlesJS("particles2-js", {
+  particlesJS("js-particle_righttop", {
     //パーティクルの設定
     particles: {
       //シェイプの数

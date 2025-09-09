@@ -49,19 +49,6 @@ main {
   }
 }
 
-.totop {
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  cursor: pointer;
-
-  // display: none; fadeInを利用するときに必要
-
-  @include max-mq {
-    width: 44px;
-    height: 44px;
-  }
-}
 
 // グーグルマップ
 .googlemap {
@@ -149,31 +136,6 @@ main {
       top: 72%;
     }
   }
-
-  &.is-open {
-    span {
-      transition: 0.2s;
-
-      &:first-child {
-        top: 48%;
-        transform: rotate(45deg);
-      }
-
-      &:nth-child(2) {
-        display: none;
-        opacity: 0;
-      }
-
-      &:last-child {
-        top: 48%;
-        transform: rotate(-45deg);
-      }
-    }
-  }
-
-  @include min-mq {
-    display: none; // PC時非表示
-  }
 }
 
 .gnav {
@@ -201,27 +163,31 @@ main {
     color: #24243f;
   }
 
-  @include max-mq {
-    position: fixed;
-    top: 0;
-    right: -110%;
-    z-index: 99;
-    width: 100%;
-    height: 100%;
-    transition: 0.5s;
+  // @include max-mq {
+  //   position: fixed;
+  //   top: 0;
+  //   right: -110%;
+  //   z-index: 99;
+  //   width: 100%;
+  //   height: 100%;
+  //   transition: 0.5s;
 
-    &.is-open {
-      right: 0;
-    }
+  //   &.is-open {
+  //     right: 0;
+  //   }
 
-    ul {
-      display: block;
-    }
+  //   ul {
+  //     position: static;
+  //     display: block;
+  //     width: 100%;
+  //     border-radius: 30px;
+  //     transform: translateX(0%);
+  //   }
 
-    a {
-      display: block;
-    }
-  }
+  //   a {
+  //     display: block;
+  //   }
+  // }
 }
 
 // ---------------------------------------------
@@ -234,5 +200,133 @@ main {
     padding: 10px;
     line-height: 1;
     text-align: center;
+  }
+}
+
+
+
+// ---------------------------------------------
+//  ハンバーガーメニュー
+// ---------------------------------------------
+
+
+.hamburger-overlay {
+  display: none;
+}
+
+@include max-mq {
+  .hamburger-overlay {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    &.active {
+      .hamburger-overlay__line {
+        background: #fff;
+
+        // 2本目は非表示
+        &:nth-of-type(2) { opacity: 0; }
+
+        // 1本目と3本目は共通で白
+        &:nth-of-type(1),
+        &:nth-of-type(3) { background: #fff; }
+
+        // 個別の変形
+        &:nth-of-type(1) { transform: translateY(9px) rotate(-45deg); }
+        &:nth-of-type(3) { transform: translateY(-9px) rotate(45deg); }
+      }
+    }
+  }
+
+  .hamburger-overlay__line {
+    position: absolute;
+    left: 11px;
+    width: 26px;
+    height: 2px;
+    background: #333;
+    transition: all 0.6s;
+
+    &:nth-of-type(1) {
+      top: 14px;
+    }
+
+    &:nth-of-type(2) {
+      top: 23px;
+    }
+
+    &:nth-of-type(3) {
+      top: 32px;
+    }
+  }
+
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    height: 100vh;
+    visibility: hidden;
+    background-color: rgb(0 0 0 / 95%);
+    opacity: 0;
+    transition: opacity 0.6s, background-color 0.6s; // 修正
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+
+      .nav-overlay__item {
+        pointer-events: auto; // 追加
+        opacity: 1;
+        transform: translateY(0);
+
+        &:nth-child(1) {
+          transition-delay: 0.1s;
+        }
+
+        &:nth-child(2) {
+          transition-delay: 0.2s;
+        }
+
+        &:nth-child(3) {
+          transition-delay: 0.3s;
+        }
+
+        &:nth-child(4) {
+          transition-delay: 0.4s;
+        }
+
+        &:nth-child(5) {
+          transition-delay: 0.5s;
+        }
+
+        &:nth-child(6) {
+          transition-delay: 0.6s;
+        }
+      }
+    }
+
+    .nav-overlay__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      text-align: center;
+      transform: translate(-50%, -50%);
+    }
+
+    .nav-overlay__item {
+      pointer-events: none; // 追加
+      opacity: 0;
+      transition: opacity 0.6s, transform 0.6s; // 修正
+      transform: translateY(20px);
+    }
   }
 }

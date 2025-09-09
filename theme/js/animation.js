@@ -5,7 +5,7 @@ console.log("animation");
 // -------------------------------*/
 
 // 画面内に入ったらクラス名を付ける
-const Target = document.querySelectorAll(".is-target"); // ターゲットとする対象を指定
+const Target = document.querySelectorAll(".is-fadein"); // ターゲットとする対象を指定
 
 const Options = {
   root: null, // 基準にする要素(nullはbody)
