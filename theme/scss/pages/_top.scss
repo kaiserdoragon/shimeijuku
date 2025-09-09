@@ -263,18 +263,6 @@
     line-height: 1;
     color: rgba(#e4f5ff, 0.6);
     letter-spacing: 0;
-
-    &::before {
-      position: absolute;
-      top: 0;
-      left: min(-26vw, -650px);
-      display: inline-block;
-      width: 611px;
-      height: 496px;
-      aspect-ratio: 611 / 496;
-      content: "";
-      background: url(../img/top/img_empower_left.png) no-repeat left center / contain;
-    }
   }
 
   //.top_empower--inner
@@ -415,11 +403,11 @@
 }
 
 .top_news {
-  padding: 50px 0 100px;
+  padding: 50px 0 120px;
 
   .ttl_sec {
     position: relative;
-    width: 850px;
+    width: min(850px, 100%);
     margin: 0 auto 30px;
 
     &::before {
@@ -447,6 +435,47 @@
     }
   }
 
+  dl {
+    color: $color-blue2;
+  }
+
+  dt {
+    font-size: var(--fz18);
+    font-weight: 500;
+  }
+
+  dd {
+    &:last-child {
+      font-weight: 500;
+    }
+  }
+
+  span {
+    font-size: var(--fz20);
+    font-weight: bold;
+  }
+
+  // .top_news--box
+  &--box {
+    position: relative;
+    box-sizing: border-box;
+    width: min(1750px, 100%);
+    padding: 0 min(4vw, 25px);
+    margin: auto;
+    background: url(../img/top/circle_blue_03.png) no-repeat left bottom 25% / 129px;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: -60%;
+      display: inline-block;
+      width: 373px;
+      height: 295px;
+      content: "";
+      background: url(../img/top/circle_blue_04.png) no-repeat center center / 100%;
+    }
+  }
+
   // .top_news--inner
   &--inner {
     box-sizing: border-box;
@@ -466,6 +495,16 @@
     background: url(../img/top/icon_arrow_blue.svg) no-repeat right center / 10px;
   }
 }
+
+.tpp_ad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 125px;
+}
+
 
 
 /* 見やすくするためのcss 不要のためコピーしなくてOK */

@@ -15,7 +15,7 @@
     </div>
 
     <div class="particle_rightbottom">
-      <div id="particles3-js"></div>
+      <div id="js-particle_rightbottom"></div>
     </div>
   </div>
   <section class="top_lead">
@@ -141,130 +141,75 @@
   </section>
   <section class="top_news">
     <h2 class="ttl_sec -lg">News<span>お知らせ</span></h2>
-    <div class="top_news--inner is-fadein">
-      <?php
-      $args = array(
-        'posts_per_page' => 3,
-        'post_type' => 'post', //postは通常の投稿機能
-        'post_status' => 'publish'
-      );
-      $my_posts = get_posts($args);
-      ?>
-      <ul class="top_news--list">
-        <?php if ($my_posts) : foreach ($my_posts as $post): setup_postdata($post); ?>
-            <li>
-              <?php if (has_post_thumbnail()): ?>
-                <?php the_post_thumbnail('custom-size');; ?>
-              <?php else : ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/img/top/img_thumbnail.jpg" alt="" width="170" height="170">
-              <?php endif; ?>
-              <dl>
-                <dt>
+    <div class="top_news--box">
+      <div class="top_news--inner is-fadein">
+        <?php
+        $args = array(
+          'posts_per_page' => 3,
+          'post_type' => 'post', //postは通常の投稿機能
+          'post_status' => 'publish'
+        );
+        $my_posts = get_posts($args);
+        ?>
+        <ul class="top_news--list">
+          <?php if ($my_posts) : foreach ($my_posts as $post): setup_postdata($post); ?>
+              <li>
+                <?php if (has_post_thumbnail()): ?>
                   <a href="<?php the_permalink(); ?>">
-                    <?php
-                    if (mb_strlen($post->post_title) > 30) {
-                      $title = mb_substr($post->post_title, 0, 30);
-                      echo $title . '';
-                    } else {
-                      echo $post->post_title;
-                    }
-                    ?>
+                    <?php the_post_thumbnail('custom-size');; ?>
                   </a>
-                </dt>
-                <dd><span><?php the_time('Y年m月d日'); ?></span></dd>
-                <dd>
+                <?php else : ?>
                   <a href="<?php the_permalink(); ?>">
-                    <?php
-                    if (mb_strlen($post->post_content, 'UTF-8') > 30) {
-                      $content = str_replace('\n', '', mb_substr(strip_tags($post->post_content), 0, 30, 'UTF-8'));
-                      echo $content . '';
-                    } else {
-                      echo str_replace('\n', '', strip_tags($post->post_content));
-                    }
-                    ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/top/img_thumbnail.jpg" alt="" width="170" height="170">
                   </a>
-                </dd>
-              </dl>
-            </li>
-        <?php endforeach;
-        endif; ?>
-      </ul>
-      <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
+                <dl>
+                  <dt>
+                    <a href="<?php the_permalink(); ?>">
+                      <?php
+                      if (mb_strlen($post->post_title) > 30) {
+                        $title = mb_substr($post->post_title, 0, 30);
+                        echo $title . '';
+                      } else {
+                        echo $post->post_title;
+                      }
+                      ?>
+                    </a>
+                  </dt>
+                  <dd><span><?php the_time('Y年m月d日'); ?></span></dd>
+                  <dd>
+                    <a href="<?php the_permalink(); ?>">
+                      <?php
+                      if (mb_strlen($post->post_content, 'UTF-8') > 30) {
+                        $content = str_replace('\n', '', mb_substr(strip_tags($post->post_content), 0, 30, 'UTF-8'));
+                        echo $content . '';
+                      } else {
+                        echo str_replace('\n', '', strip_tags($post->post_content));
+                      }
+                      ?>
+                    </a>
+                  </dd>
+                </dl>
+              </li>
+          <?php endforeach;
+          endif; ?>
+        </ul>
+        <?php wp_reset_postdata(); ?>
+      </div>
     </div>
     <a class="top_news--link" href="<?php echo esc_url(home_url('/news')); ?>">過去の記事を見る</a>
   </section>
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <h2 class="ttl_sec">Contact</h2>
-  <h2 class="ttl_sec -md">Pik up News,</h2>
-  <h2 class="ttl_sec -lg">Course</h2>
-  <div class="is-fadein">アニメーション発火</div>
-
-
-
+  <div class="tpp_ad">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/top/img_method_01.png" alt="疑問・不安全て解決　無料体験授業実施" width="245" height="107">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/top/img_method_02.png" alt="目標を達成する力を子供たちへ　これが本気の学習法　シンメイメソッド" width="245" height="107">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/top/img_method_03.png" alt="成績向上実績　合格実績" width="245" height="107">
+  </div>
+  <div>
+    <div class="googlemap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1629.6161247721666!2d136.89178628912322!3d35.22558813424816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003746df7939f1d%3A0x678bab8e0dcf8635!2z44CSNDUyLTA4MDkg5oSb55-l55yM5ZCN5Y-k5bGL5biC6KW_5Yy66Iqx5Y6f55S6!5e0!3m2!1sja!2sjp!4v1757401703217!5m2!1sja!2sjp" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <address class="googlemap--address">真明塾　名古屋市西区花原町47番</address>
+  </div>
   <!-- <div class="swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">Slide 1</div>
@@ -276,7 +221,5 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-scrollbar"></div>
   </div> -->
-
-
 </main>
 <?php get_footer(); ?>

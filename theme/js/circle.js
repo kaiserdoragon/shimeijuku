@@ -52,7 +52,7 @@ window.addEventListener("load", function () {
         anim: {
           enable: false, //シェイプの大きさをアニメーションしない
           speed: 10, //アニメーションのスピード
-          size_min: 20, //サイズの最小値
+          size_min: 25, //サイズの最小値
           sync: false, //各シェイプを同時に動かさない
         },
       },
@@ -184,7 +184,7 @@ window.addEventListener("load", function () {
         anim: {
           enable: false, //シェイプの大きさをアニメーションしない
           speed: 10, //アニメーションのスピード
-          size_min: 20, //サイズの最小値
+          size_min: 25, //サイズの最小値
           sync: false, //各シェイプを同時に動かさない
         },
       },
@@ -264,7 +264,7 @@ window.addEventListener("load", function () {
 
 window.addEventListener("load", function () {
   //下記particles-js↓のところはHTMLで指定したidと合わせてください
-  particlesJS("particles3-js", {
+  particlesJS("js-particle_rightbottom", {
     //パーティクルの設定
     particles: {
       //シェイプの数
@@ -311,7 +311,7 @@ window.addEventListener("load", function () {
       },
       //シェイプの大きさ
       size: {
-        value: 30, //大きさ
+        value: 50, //大きさ
         random: true, //大きさをランダムにする falseで均一
         anim: {
           enable: false, //シェイプの大きさをアニメーションしない
