@@ -110,14 +110,18 @@ function header_style_script()
     wp_register_script('animation', get_template_directory_uri() . '/js/animation.js', array('jquery'));
     wp_enqueue_script('animation');
 
-    wp_register_script('circle', get_template_directory_uri() . '/js/circle.js', array('jquery'));
-    wp_enqueue_script('circle');
 
+    //パーティクル用のjsファイルを読み込み（下記3つ必要。コードの記載は「circle.js」）
     wp_register_script('particles', get_template_directory_uri() . '/js/particles.js', array('jquery'));
     wp_enqueue_script('particles');
 
     wp_register_script('app', get_template_directory_uri() . '/js/app.js', array('jquery'));
     wp_enqueue_script('app');
+
+    wp_register_script('circle', get_template_directory_uri() . '/js/circle.js', array('jquery'));
+    wp_enqueue_script('circle');
+
+
 
     // ページ専用jsの読み込みが必要な時は下記のように使う。
     //    wp_register_script('scriptname', get_template_directory_uri().'/js/scriptname.js', array('jquery'));
