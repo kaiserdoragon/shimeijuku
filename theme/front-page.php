@@ -48,7 +48,7 @@
     <div class="container">
       <h2 class="ttl_sec -md">Pik up News,</h2>
       <p>自由に書き込みができる場所です。</p>
-      <ul class="post_content">
+      <div class="post_content">
         <?php
         $args = array(
           'posts_per_page' => 1
@@ -57,14 +57,14 @@
         foreach ($posts as $post):
           setup_postdata($post);
         ?>
-          <li>
-            <a href="<?php the_permalink(); ?>"><?php the_content(); ?></a>
-          </li>
+          <div>
+            <?php the_content(); ?>
+          </div>
         <?php
         endforeach;
         wp_reset_postdata();
         ?>
-      </ul>
+      </div>
     </div>
   </section>
   <section class="top_empower">
@@ -93,8 +93,107 @@
       </dl>
       <a href="<?php echo esc_url(home_url('/contact')); ?>">真明塾の特徴</a>
     </div>
-    <img src="<?php echo get_template_directory_uri(); ?>/img/top/bg_empower.jpg" alt="" width="2331" height="1412">
+    <img class="top_empower--bg" src="<?php echo get_template_directory_uri(); ?>/img/top/bg_empower.png" alt="" width="2496" height="1705">
   </section>
+  <section class="top_course">
+    <h2 class="ttl_sec -lg">Course<span>コース紹介</span></h2>
+    <div class="top_course--inner">
+      <div class="container">
+        <ol>
+          <li class="is-fadein">
+            <div>
+              <h3>小学部 公立中進学科</h3>
+              <p>勉強をする習慣をつけ基礎学力を向上させる『本科コース』を中心に、厳しいけど温かく、授業を行ってます。目標は中学進学後の成績上位、そこに重点を置いた指導です。</p>
+              <a href="#">詳細を見る</a>
+            </div>
+            <img src="<?php echo get_template_directory_uri(); ?>/img/top/img_course_01.jpg" alt="" width="244" height="305">
+          </li>
+          <li class="is-fadein">
+            <div>
+              <h3>中学部 高校受験科</h3>
+              <p>学校に準拠した予習・復習を最新鋭の個別学習システムを活用し、5教科を徹底指導していきます。中学1年生の段階から基礎学力を向上させ、高校受験を目標に応用まで、しっかり学習できます。</p>
+              <a href="#">詳細を見る</a>
+            </div>
+            <img src="<?php echo get_template_directory_uri(); ?>/img/top/img_course_02.jpg" alt="" width="244" height="305">
+          </li>
+          <li class="is-fadein">
+            <div>
+              <h3>高校生の学習コース</h3>
+              <p>真明塾から、難関・有名大学へ―。「アドバンスウィング＋学研プライムゼミ」で体系的に学び、大学入試共通テストの土台が築ける。</p>
+              <a href="#">詳細を見る</a>
+            </div>
+            <img src="<?php echo get_template_directory_uri(); ?>/img/top/img_course_03.jpg" alt="" width="244" height="305">
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <section class="top_method">
+    <div class="top_method--inner is-fadein">
+      <div>
+        <h2 class="ttl_sec -lg">Method<span>シンメイ メソッド</span></h2>
+        <p>勉強ができるとは、「わかる」「できる」「やり遂げる」<br class="is-hidden_sp">の３つのステップから成り立っています。</p>
+        <span class="top_method--addition">1992年開校から蓄積された指導法と<br class="is-hidden_sp">最新鋭の教育システムが提供する真明塾のメソッド</span>
+        <a href="#">指導方針</a>
+      </div>
+      <img src="<?php echo get_template_directory_uri(); ?>/img/top/img_method.png" alt="" width="510" height="448">
+    </div>
+  </section>
+  <section class="top_news">
+    <h2 class="ttl_sec -lg">News<span>お知らせ</span></h2>
+    <div class="top_news--inner is-fadein">
+      <?php
+      $args = array(
+        'posts_per_page' => 3,
+        'post_type' => 'post', //postは通常の投稿機能
+        'post_status' => 'publish'
+      );
+      $my_posts = get_posts($args);
+      ?>
+      <ul class="top_news--list">
+        <?php if ($my_posts) : foreach ($my_posts as $post): setup_postdata($post); ?>
+            <li>
+              <?php if (has_post_thumbnail()): ?>
+                <?php the_post_thumbnail('custom-size');; ?>
+              <?php else : ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/img/top/img_thumbnail.jpg" alt="" width="170" height="170">
+              <?php endif; ?>
+              <dl>
+                <dt>
+                  <a href="<?php the_permalink(); ?>">
+                    <?php
+                    if (mb_strlen($post->post_title) > 30) {
+                      $title = mb_substr($post->post_title, 0, 30);
+                      echo $title . '';
+                    } else {
+                      echo $post->post_title;
+                    }
+                    ?>
+                  </a>
+                </dt>
+                <dd><span><?php the_time('Y年m月d日'); ?></span></dd>
+                <dd>
+                  <a href="<?php the_permalink(); ?>">
+                    <?php
+                    if (mb_strlen($post->post_content, 'UTF-8') > 30) {
+                      $content = str_replace('\n', '', mb_substr(strip_tags($post->post_content), 0, 30, 'UTF-8'));
+                      echo $content . '';
+                    } else {
+                      echo str_replace('\n', '', strip_tags($post->post_content));
+                    }
+                    ?>
+                  </a>
+                </dd>
+              </dl>
+            </li>
+        <?php endforeach;
+        endif; ?>
+      </ul>
+      <?php wp_reset_postdata(); ?>
+    </div>
+    <a class="top_news--link" href="<?php echo esc_url(home_url('/news')); ?>">過去の記事を見る</a>
+  </section>
+
   <br>
   <br>
   <br>
@@ -161,30 +260,8 @@
 
   <h2 class="ttl_sec">Contact</h2>
   <h2 class="ttl_sec -md">Pik up News,</h2>
+  <h2 class="ttl_sec -lg">Course</h2>
   <div class="is-fadein">アニメーション発火</div>
-
-  <section class="top_info">
-    <h2 class="top_info--ttl">お知らせ</h2>
-    <?php
-    $args = array(
-      'posts_per_page' => 3,
-      'post_type' => 'post', //postは通常の投稿機能
-      'post_status' => 'publish'
-    );
-    $my_posts = get_posts($args);
-    ?>
-    <dl class="top_info--list">
-      <?php foreach ($my_posts as $post): setup_postdata($post); ?>
-        <dt class="top_info--term">
-          <span class="top_info--time"><?php the_time('Y.m.j'); ?></span>
-        </dt>
-        <dd class="top_info--detail">
-          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-        </dd>
-      <?php endforeach; ?>
-    </dl>
-    <?php wp_reset_postdata(); ?>
-  </section>
 
 
 

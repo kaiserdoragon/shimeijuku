@@ -27,6 +27,8 @@ function change_target(entries, Observer) {
     const Target = entry.target;
     if (entry.isIntersecting) {
       Target.classList.add("is-animation");
+      // 一度アニメーションしたら監視を解除
+      Observer.unobserve(Target);
     } else {
       Target.classList.remove("is-animation");
     }

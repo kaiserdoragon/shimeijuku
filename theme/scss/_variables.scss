@@ -27,7 +27,7 @@ $font-zen: "Zen Kaku Gothic New", sans-serif;
 :root {
   --invariants: 2.5; //初期値2.5
 
-  @for $var from 10 through 100 {
+  @for $var from 10 through 300 {
     --fz#{$var}: min(calc(0.1rem * #{$var}), calc(0.1vw * #{$var} * var(--invariants)));
   }
 }

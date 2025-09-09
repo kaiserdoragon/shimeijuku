@@ -222,10 +222,6 @@
 .top_empower {
   position: relative;
 
-  img {
-    width: 100%;
-  }
-
   dl,
   a {
     color: #fff;
@@ -248,28 +244,228 @@
   }
 
   a {
+    position: relative;
+    top: -15px;
+    left: 10%;
+    box-sizing: border-box;
     display: block;
-    width: 50%;
-    margin: 0 0 0 auto;
+    width: fit-content;
+    padding-right: 15%;
+    margin: auto;
     font-size: 0.78vw;
+    background: url(../img/top/icon_arrow.svg) no-repeat center center / contain;
   }
 
-  // .top_empower--inner
+  .ttl_sec {
+    position: relative;
+    margin-bottom: 3vw;
+    font-size: 15.63vw;
+    line-height: 1;
+    color: rgba(#e4f5ff, 0.6);
+    letter-spacing: 0;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: min(-26vw, -650px);
+      display: inline-block;
+      width: 611px;
+      height: 496px;
+      aspect-ratio: 611 / 496;
+      content: "";
+      background: url(../img/top/img_empower_left.png) no-repeat left center / contain;
+    }
+  }
+
+  //.top_empower--inner
   &--inner {
     position: absolute;
     top: 12%;
     right: 35px;
   }
 
-  .ttl_sec {
-    margin-bottom: 3vw;
-    font-size: 15.63vw;
-    line-height: 1;
-    color: rgba(#e4f5ff, 0.6);
-    letter-spacing: 0;
+  //.top_empower--bg
+  &--bg {
+    width: 100%;
   }
 }
 
+.top_course {
+  margin-top: -7vw;
+
+  .ttl_sec {
+    padding-right: 200px;
+    margin-bottom: 40px;
+  }
+
+  ol {
+    counter-reset: listnum;
+  }
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 134px;
+    justify-content: center;
+    counter-increment: listnum;
+
+    >div {
+      width: 320px;
+    }
+
+    h3 {
+      position: relative;
+      margin-bottom: 15px;
+      font-size: var(--fz20);
+      font-weight: 500;
+      color: $color-blue2;
+
+      &::before {
+        margin-right: 20px;
+        font-weight: bold;
+        color: $color-blue2;
+        content: counter(listnum, decimal-leading-zero);
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 115px;
+    }
+  }
+
+  p {
+    min-height: 125px;
+    margin-bottom: 60px;
+    font-size: var(--fz15);
+    line-height: 1.6666;
+  }
+
+  a {
+    display: block;
+    width: fit-content;
+    padding-right: 45px;
+    margin: 0 0 0 auto;
+    font-size: 15px;
+    color: $color-blue2;
+    background: url(../img/top/icon_arrow_blue.svg) no-repeat right center / 10px;
+  }
+
+  // .top_course--inner
+  &--inner {
+    padding: 65px 0 0;
+    background: url(../img/top/bg_course.png) no-repeat top center / 1801px 898px;
+  }
+}
+
+
+.top_method {
+  padding: 200px 0 150px;
+
+  p {
+    margin-bottom: 15px;
+    font-size: var(--fz20);
+    font-weight: 500;
+    color: $color-blue2;
+  }
+
+  a {
+    display: block;
+    width: fit-content;
+    padding-right: 45px;
+    margin: 0 0 0 auto;
+    font-size: 15px;
+    color: $color-blue2;
+    background: url(../img/top/icon_arrow_blue.svg) no-repeat right center / 10px;
+  }
+
+  .ttl_sec {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      width: 82px;
+      height: 93px;
+      content: "";
+      background: url(../img/top/circle_blue_02.png) no-repeat right center/contain;
+    }
+  }
+
+  // .top_method--inner
+  &--inner {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    gap: 70px;
+    align-items: center;
+    justify-content: center;
+    width: min(1350px, 100%);
+    padding: 0 min(4vw, 25px);
+    margin: auto;
+  }
+
+  // .top_method--addition
+  &--addition {
+    display: block;
+    font-size: var(--fz15);
+  }
+}
+
+.top_news {
+  padding: 50px 0 100px;
+
+  .ttl_sec {
+    position: relative;
+    width: 850px;
+    margin: 0 auto 30px;
+
+    &::before {
+      position: absolute;
+      top: -15%;
+      left: -20%;
+      z-index: -1;
+      display: inline-block;
+      width: 221px;
+      height: 155px;
+      content: "";
+      background: url(../img/top/img_dot.png) no-repeat left top / contain;
+    }
+  }
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 55px;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 100px;
+    }
+  }
+
+  // .top_news--inner
+  &--inner {
+    box-sizing: border-box;
+    width: min(920px, 100%);
+    padding: 0 min(4vw, 25px);
+    margin: auto;
+  }
+
+  // .top_news--link
+  &--link {
+    display: block;
+    width: fit-content;
+    padding-right: 45px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: $color-blue2;
+    background: url(../img/top/icon_arrow_blue.svg) no-repeat right center / 10px;
+  }
+}
 
 
 /* 見やすくするためのcss 不要のためコピーしなくてOK */

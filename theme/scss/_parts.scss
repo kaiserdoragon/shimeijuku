@@ -11,9 +11,22 @@
   font-weight: bold;
   color: $color-ttlsec;
 
-
   &.-md {
     font-size: var(--fz64);
+  }
+
+  &.-lg {
+    width: fit-content;
+    margin: auto;
+    font-size: var(--fz128);
+    color: #e3e3e3;
+
+    span {
+      position: relative;
+      left: -55px;
+      font-size: var(--fz32);
+      color: #333;
+    }
   }
 }
 
