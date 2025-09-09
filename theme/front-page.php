@@ -51,7 +51,7 @@
       <ul class="post_content">
         <?php
         $args = array(
-          'posts_per_page' => 1 // 表示件数の指定
+          'posts_per_page' => 1
         );
         $posts = get_posts($args);
         foreach ($posts as $post):
@@ -73,8 +73,8 @@
       <dl>
         <dt>あなたの未来を、あなたの手で選ぶ。</dt>
         <dd>
-          <p>これからの人生には、何度も「選ぶ」瞬間が訪れます。</p>
-          <p>どんな夢を描くのか。どの道を進むのか。<br>そして――どんな自分でありたいのか。<br>そのすべては、いま積み重ねている力から始まります。</p>
+          <p class="u-mb10">これからの人生には、何度も「選ぶ」瞬間が訪れます。</p>
+          <p class="u-mb10">どんな夢を描くのか。どの道を進むのか。<br>そして――どんな自分でありたいのか。<br>そのすべては、いま積み重ねている力から始まります。</p>
           <p>
             学ぶことは、誰かにやらされるものではありません。<br>
             「知りたい」「できるようになりたい」「変わりたい」――<br>
@@ -93,6 +93,7 @@
       </dl>
       <a href="<?php echo esc_url(home_url('/contact')); ?>">真明塾の特徴</a>
     </div>
+    <img src="<?php echo get_template_directory_uri(); ?>/img/top/bg_empower.jpg" alt="" width="2331" height="1412">
   </section>
   <br>
   <br>

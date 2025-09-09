@@ -220,15 +220,52 @@
 }
 
 .top_empower {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  dl,
+  a {
+    color: #fff;
+  }
+
+  dl {
+    position: relative;
+    left: -3.5vw;
+  }
+
+  dt {
+    margin-bottom: 35px;
+    font-size: 1.67vw;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 0.83vw;
+    line-height: 2;
+  }
+
+  a {
+    display: block;
+    width: 50%;
+    margin: 0 0 0 auto;
+    font-size: 0.78vw;
+  }
+
   // .top_empower--inner
   &--inner {
-    width: 95%;
-    margin: auto;
+    position: absolute;
+    top: 12%;
+    right: 35px;
   }
 
   .ttl_sec {
+    margin-bottom: 3vw;
     font-size: 15.63vw;
-    color: #e4f5ff;
+    line-height: 1;
+    color: rgba(#e4f5ff, 0.6);
     letter-spacing: 0;
   }
 }
