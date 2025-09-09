@@ -45,6 +45,16 @@
       background: #fff;
       animation: topscroll 2s infinite;
     }
+
+    @include max-mq {
+      right: 20px;
+      bottom: 60px;
+
+      &::before {
+        bottom: -50px;
+        height: 40px;
+      }
+    }
   }
 }
 
@@ -86,6 +96,11 @@
     right: 0;
     z-index: -1;
   }
+
+  @include max-mq {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .particle_righttop {
@@ -103,6 +118,11 @@
     right: 0;
     z-index: -1;
   }
+
+  @include max-mq {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .particle_rightbottom {
@@ -119,6 +139,11 @@
     top: 50px;
     right: 0;
     z-index: -1;
+  }
+
+  @include max-mq {
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -188,6 +213,14 @@
     padding: 0 min(4vw, 25px);
     margin: auto;
   }
+
+  @include max-mq {
+    margin-block: 60px 100px;
+
+    ul {
+      gap: 25px;
+    }
+  }
 }
 
 .top_latest {
@@ -216,6 +249,17 @@
     height: 105px;
     content: "";
     background: url(../img/top/circle_blue.png) no-repeat center/contain;
+  }
+
+  @include max-mq {
+    padding: 0;
+
+    &::after {
+      right: 20px;
+      z-index: -1;
+      width: 75px;
+      height: 75px;
+    }
   }
 }
 
@@ -270,11 +314,58 @@
     position: absolute;
     top: 12%;
     right: 35px;
+
+    @include max-mq {
+      top: 21%;
+      right: 10px;
+      width: 75%;
+    }
   }
 
   //.top_empower--bg
   &--bg {
     width: 100%;
+
+    @include max-mq {
+      object-fit: cover;
+      height: 170vw;
+      aspect-ratio: 1 / 1;
+      object-position: 25% center;
+    }
+
+    @media (width <= 600px) {
+      height: 330vw;
+    }
+  }
+
+  @include max-mq {
+    .ttl_sec {
+      margin-bottom: 25px;
+      color: rgb(228 245 255 / 80%);
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    dl {
+      left: 0;
+    }
+
+    dt {
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    a {
+      top: 0;
+      left: 0;
+      padding-right: 15%;
+      margin: 20px 0 0 auto;
+      font-size: 14px;
+      background: url(../img/top/icon_arrow.svg) no-repeat center right / 7px;
+    }
   }
 }
 
@@ -343,8 +434,33 @@
     padding: 65px 0 0;
     background: url(../img/top/bg_course.png) no-repeat top center / 1801px 898px;
   }
-}
 
+  @include max-mq {
+    margin-top: 0;
+
+    .ttl_sec {
+      padding-right: 0;
+    }
+
+    p {
+      min-height: auto;
+      margin-bottom: 40px;
+    }
+
+    li {
+      gap: 50px;
+
+      &:not(:last-child) {
+        margin-bottom: 80px;
+      }
+    }
+
+    a {
+      min-height: auto;
+      margin-bottom: 10px;
+    }
+  }
+}
 
 .top_method {
   padding: 200px 0 150px;
@@ -393,12 +509,36 @@
     width: min(1350px, 100%);
     padding: 0 min(4vw, 25px);
     margin: auto;
+
+    @include max-mq {
+      gap: 30px;
+    }
   }
 
   // .top_method--addition
   &--addition {
     display: block;
     font-size: var(--fz15);
+
+    @include max-mq {
+      margin-bottom: 15px;
+    }
+  }
+
+  @include max-mq {
+    padding: 100px 0;
+
+    .ttl_sec {
+      display: flex;
+      align-items: baseline;
+      width: 100%;
+
+      span {
+        display: block;
+        margin: 0 0 0 -25px;
+        font-size: var(--fz16);
+      }
+    }
   }
 }
 
@@ -468,11 +608,21 @@
       position: absolute;
       right: 0;
       bottom: -60%;
+      z-index: -1;
       display: inline-block;
       width: 373px;
       height: 295px;
       content: "";
       background: url(../img/top/circle_blue_04.png) no-repeat center center / 100%;
+    }
+
+    @include max-mq {
+      &::after {
+        right: 0;
+        bottom: -17%;
+        width: 110px;
+        height: 80px;
+      }
     }
   }
 
@@ -494,6 +644,34 @@
     color: $color-blue2;
     background: url(../img/top/icon_arrow_blue.svg) no-repeat right center / 10px;
   }
+
+  @include max-mq {
+    .ttl_sec {
+      width: 75%;
+
+      span {
+        left: -25px;
+      }
+
+      &::before {
+        top: 17%;
+        left: -9%;
+        width: 70px;
+        height: 75px;
+      }
+    }
+
+    li {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 50px;
+
+      &:last-child {
+        margin-bottom: 60px;
+      }
+    }
+  }
 }
 
 .tpp_ad {
@@ -503,6 +681,10 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 125px;
+
+  @include max-mq {
+    margin-bottom: 80px;
+  }
 }
 
 

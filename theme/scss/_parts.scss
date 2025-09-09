@@ -28,6 +28,22 @@
       color: #333;
     }
   }
+
+  @include max-mq {
+    font-size: var(--fz23);
+
+    &.-md {
+      font-size: var(--fz25);
+    }
+
+    &.-lg {
+      font-size: 70px;
+
+      span {
+        font-size: var(--fz30);
+      }
+    }
+  }
 }
 
 .is-fadein {

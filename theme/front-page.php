@@ -79,7 +79,7 @@
             学ぶことは、誰かにやらされるものではありません。<br>
             「知りたい」「できるようになりたい」「変わりたい」――<br>
             その想いこそが、本当の成長を生み出します。<br>
-            いま取り組んでいる勉強は、ただ点数を取るためのものではなく、<br>
+            いま取り組んでいる勉強は、ただ点数を取るためのものではなく、<br class="is-hidden_sp">
             未来を自分で選びとるための大切な「土台」になるはずです。<br>
             真明塾は、その挑戦を本気で支えます。<br>
             一人ひとりの目標や課題に真剣に向き合い、<br>時には厳しく徹底的に指導し、そして大きな愛情で見守ります。<br>
@@ -93,7 +93,10 @@
       </dl>
       <a href="<?php echo esc_url(home_url('/contact')); ?>">真明塾の特徴</a>
     </div>
-    <img class="top_empower--bg" src="<?php echo get_template_directory_uri(); ?>/img/top/bg_empower.png" alt="" width="2496" height="1705">
+    <picture>
+      <source srcset="<?php echo get_template_directory_uri(); ?>/img/top/bg_empower_sp.png" media="(max-width: 768px)" />
+      <img class="top_empower--bg" src="<?php echo get_template_directory_uri(); ?>/img/top/bg_empower.png" alt="" width="2496" height="1705">
+    </picture>
   </section>
   <section class="top_course">
     <h2 class="ttl_sec -lg">Course<span>コース紹介</span></h2>

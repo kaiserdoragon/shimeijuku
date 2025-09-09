@@ -74,6 +74,11 @@ main {
     font-size: var(--fz15);
     color: #b7b7b7;
     border-left: 3px solid #b7b7b7;
+
+    @include max-mq {
+      padding-left: 15px;
+      margin: 15px 0 0 15px;
+    }
   }
 
   @include max-mq {
@@ -97,12 +102,22 @@ main {
     top: 25px;
     left: 30px;
     display: flex;
+
+    @include max-mq {
+      top: 10px;
+      left: 10px;
+      display: block;
+    }
   }
 
   // .header--logo
   &--logo {
     a {
       display: block;
+    }
+
+    @include max-mq {
+      width: 70%;
     }
   }
 }
@@ -172,31 +187,36 @@ main {
     color: #24243f;
   }
 
-  // @include max-mq {
-  //   position: fixed;
-  //   top: 0;
-  //   right: -110%;
-  //   z-index: 99;
-  //   width: 100%;
-  //   height: 100%;
-  //   transition: 0.5s;
+  @include max-mq {
+    position: fixed;
+    top: 0;
+    right: -110%;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
 
-  //   &.is-open {
-  //     right: 0;
-  //   }
+    &.is-open {
+      right: 0;
+    }
 
-  //   ul {
-  //     position: static;
-  //     display: block;
-  //     width: 100%;
-  //     border-radius: 30px;
-  //     transform: translateX(0%);
-  //   }
+    ul {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background: transparent;
+      border-radius: 30px;
+      transform: translateX(0%);
+    }
 
-  //   a {
-  //     display: block;
-  //   }
-  // }
+    a {
+      display: block;
+      font-size: var(--fz14);
+      color: #fff;
+    }
+  }
 }
 
 // ---------------------------------------------
@@ -255,13 +275,21 @@ main {
     border-radius: 5px;
   }
 
-
   // .footer--list
   &--list {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
+
+    @include max-mq {
+      gap: 15px;
+      justify-content: center;
+
+      dl {
+        width: 45%;
+      }
+    }
   }
 }
 
@@ -279,9 +307,9 @@ main {
 @include max-mq {
   .hamburger-overlay {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
+    top: 10px;
+    right: 10px;
+    z-index: 1111111111;
     display: block;
     width: 48px;
     height: 48px;
@@ -336,7 +364,7 @@ main {
     width: 100%;
     height: 100vh;
     visibility: hidden;
-    background-color: rgb(0 0 0 / 95%);
+    background-color: rgb(0 12 41 / 95%);
     opacity: 0;
     transition: opacity 0.6s, background-color 0.6s; // 修正
 

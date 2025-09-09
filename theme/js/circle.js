@@ -1,13 +1,14 @@
 window.addEventListener("load", function () {
   var leftTop = document.getElementById("js-particle_lefttop");
   if (leftTop) {
+    var isSP = window.innerWidth <= 768;
     //下記particles-js↓のところはHTMLで指定したidと合わせてください
     particlesJS("js-particle_lefttop", {
       //パーティクルの設定
       particles: {
         //シェイプの数
         number: {
-          value: 500, //シェイプの数
+          value: isSP ? 350 : 500, //SP時は100、それ以外は500
           density: {
             enable: true, //密度を変更する
             value_area: 5000, //密集度
@@ -49,12 +50,12 @@ window.addEventListener("load", function () {
         },
         //シェイプの大きさ
         size: {
-          value: 30, //大きさ
+          value: isSP ? 10 : 30, //SP時は100、それ以外は500
           random: true, //大きさをランダムにする falseで均一
           anim: {
             enable: false, //シェイプの大きさをアニメーションしない
             speed: 10, //アニメーションのスピード
-            size_min: 25, //サイズの最小値
+            size_min: isSP ? 10 : 25, //SP時は100、それ以外は500
             sync: false, //各シェイプを同時に動かさない
           },
         },
@@ -136,13 +137,14 @@ window.addEventListener("load", function () {
 window.addEventListener("load", function () {
   var rightTop = document.getElementById("js-particle_righttop");
   if (rightTop) {
+    var isSP = window.innerWidth <= 768;
     //下記particles-js↓のところはHTMLで指定したidと合わせてください
     particlesJS("js-particle_righttop", {
       //パーティクルの設定
       particles: {
         //シェイプの数
         number: {
-          value: 500, //シェイプの数
+          value: isSP ? 300 : 500, //SP時は100、それ以外は500
           density: {
             enable: true, //密度を変更する
             value_area: 5000, //密集度
@@ -271,13 +273,14 @@ window.addEventListener("load", function () {
 window.addEventListener("load", function () {
   var rightBottom = document.getElementById("js-particle_rightbottom");
   if (rightBottom) {
+    var isSP = window.innerWidth <= 768;
     //下記particles-js↓のところはHTMLで指定したidと合わせてください
     particlesJS("js-particle_rightbottom", {
       //パーティクルの設定
       particles: {
         //シェイプの数
         number: {
-          value: 500, //シェイプの数
+          value: isSP ? 350 : 500, //SP時は100、それ以外は500
           density: {
             enable: true, //密度を変更する
             value_area: 5000, //密集度
@@ -319,12 +322,12 @@ window.addEventListener("load", function () {
         },
         //シェイプの大きさ
         size: {
-          value: 50, //大きさ
+          value: isSP ? 15 : 50, //SP時は15、それ以外は50
           random: true, //大きさをランダムにする falseで均一
           anim: {
             enable: false, //シェイプの大きさをアニメーションしない
             speed: 10, //アニメーションのスピード
-            size_min: 20, //サイズの最小値
+            size_min: isSP ? 10 : 20, //SP時は15、それ以外は50, //サイズの最小値
             sync: false, //各シェイプを同時に動かさない
           },
         },
