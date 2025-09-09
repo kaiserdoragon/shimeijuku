@@ -126,42 +126,6 @@ main {
 //  グローバルナビゲーション関連 gnav
 // ---------------------------------------------
 
-// .gnav_btn {
-//   position: fixed;
-//   top: 10px;
-//   right: 10px;
-//   z-index: 100;
-//   display: block;
-//   width: 44px;
-//   height: 44px;
-//   cursor: pointer;
-//   background: $color-blue1;
-//   border: solid 2px #fff;
-
-//   span {
-//     position: absolute;
-//     left: 15%;
-//     display: block;
-//     width: 70%;
-//     height: 3px;
-//     background: #fff;
-//     transition: 0.3s;
-
-//     &:first-child {
-//       top: 23%;
-//     }
-
-//     &:nth-child(2) {
-//       top: 48%;
-//       opacity: 1;
-//     }
-
-//     &:last-child {
-//       top: 72%;
-//     }
-//   }
-// }
-
 .gnav {
   display: block;
 
@@ -182,9 +146,8 @@ main {
   a {
     display: block;
     padding: 18px 0;
-    font-size: 0.7291666666666666vw;
+    font-size: min(14px, 0.7291666666666666vw);
     font-weight: bold;
-    color: #24243f;
   }
 
   @include max-mq {
@@ -293,8 +256,6 @@ main {
   }
 }
 
-
-
 // ---------------------------------------------
 //  ハンバーガーメニュー
 // ---------------------------------------------
@@ -302,6 +263,18 @@ main {
 
 .hamburger-overlay {
   display: none;
+}
+
+.nav-overlay__item {
+  a {
+    color: #24243f;
+  }
+
+  &:last-child {
+    a {
+      color: #004ea2;
+    }
+  }
 }
 
 @include max-mq {
@@ -417,6 +390,10 @@ main {
       opacity: 0;
       transition: opacity 0.6s, transform 0.6s; // 修正
       transform: translateY(20px);
+
+      a {
+        color: #fff;
+      }
     }
   }
 }
