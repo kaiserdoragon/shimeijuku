@@ -73,40 +73,46 @@ window.addEventListener("load", () => {
   }
 });
 
-
-
-
 // overlay-script.js
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.querySelector('.hamburger-overlay');
-  const nav = document.querySelector('.nav-overlay');
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger-overlay");
+  const nav = document.querySelector(".nav-overlay");
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    nav.classList.toggle('active');
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    nav.classList.toggle("active");
 
-    const isOpen = hamburger.classList.contains('active');
-    hamburger.setAttribute('aria-expanded', isOpen);
-    nav.setAttribute('aria-hidden', !isOpen);
+    const isOpen = hamburger.classList.contains("active");
+    hamburger.setAttribute("aria-expanded", isOpen);
+    nav.setAttribute("aria-hidden", !isOpen);
 
     // メニューオープン時に背景スクロールを防止
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    // document.documentElement.style.overflow = isOpen ? "hidden" : "";
   });
 
   // ESCキーでメニューを閉じる
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav.classList.contains('active')) {
-      hamburger.classList.remove('active');
-      nav.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', false);
-      nav.setAttribute('aria-hidden', true);
-      document.body.style.overflow = '';
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nav.classList.contains("active")) {
+      hamburger.classList.remove("active");
+      nav.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", false);
+      nav.setAttribute("aria-hidden", true);
+      document.body.style.overflow = "";
     }
   });
 });
 
-// (function ($, root, undefined) {
-//   // ------------------------------
-//   // jqueryはここに記載
-//   // ------------------------------
-// })(jQuery, this);
+(function ($, root, undefined) {
+  // ドロップダウンメニュー
+  $(function () {
+    $(".nav-overlay__item").hover(
+      function () {
+        $(this).children(".dropdownmenu").stop(true, true).slideDown(500);
+      },
+      function () {
+        $(this).children(".dropdownmenu").stop(true, true).slideUp(500);
+      }
+    );
+  });
+})(jQuery, this);

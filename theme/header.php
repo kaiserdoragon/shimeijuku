@@ -28,11 +28,25 @@
 				<nav id="overlay-menu" class="gnav nav-overlay" aria-label="メインナビゲーション" aria-hidden="true">
 					<div class="nav-overlay__content">
 						<ul class="nav-overlay__list">
-							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/features')); ?>">真明塾の特徴</a></li>
-							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/courses')); ?>">コース紹介</a></li>
-							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/policy')); ?>">指導方針</a></li>
-							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/testimonials')); ?>">塾生の声</a></li>
+							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/features')); ?>">真明塾について</a></li>
+							<li class="nav-overlay__item">
+								<a href="<?php echo esc_url(home_url('/courses')); ?>">コース紹介</a>
+								<ul class="dropdownmenu">
+									<li><a href="#">小学部 公立中進学科</a></li>
+									<li><a href="#">中学部 高校受験科</a></li>
+									<li><a href="#">高校部 大学受験科</a></li>
+								</ul>
+							</li>
 							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/trial')); ?>">無料体験授業</a></li>
+							<li class="nav-overlay__item">
+								<a href="<?php echo esc_url(home_url('/trial')); ?>">実績・塾生の声</a>
+								<ul class="dropdownmenu">
+									<li><a href="#">合格・成績向上実績</a></li>
+									<li><a href="#">合格体験記</a></li>
+									<li><a href="#">塾生の声</a></li>
+								</ul>
+							</li>
+							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/policy')); ?>">教室概要</a></li>
 							<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a></li>
 						</ul>
 					</div>
