@@ -101,22 +101,17 @@ main {
   position: relative;
   z-index: 2;
 
-  // .header--inner
-  &--inner {
+  // .header--logo
+  &--logo {
     position: absolute;
-    top: 25px;
+    top: 30px;
     left: 30px;
-    display: flex;
 
     @include max-mq {
       top: 10px;
       left: 10px;
-      display: block;
     }
-  }
 
-  // .header--logo
-  &--logo {
     a {
       display: block;
     }
@@ -137,18 +132,27 @@ main {
   left: 50%;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.9791666666666665vw;
+  gap: 35px;
   justify-content: center;
-  width: 46.875vw;
-  background: rgba(#fff, 0.8);
-  border-radius: 99999999px;
+  width: 100%;
+  max-width: 900px;
+  background: rgb(255 255 255 / 80%);
+  border-radius: 1000px;
   transform: translateX(-50%);
 
   a {
     display: block;
-    padding: 18px 0;
-    font-size: min(14px, 0.7291666666666666vw);
+    font-size: var(--fz14);
     font-weight: bold;
+  }
+
+  @media (width <= 1450px) {
+    max-width: 800px;
+  }
+
+  @media (1025px <= width <= 1280px) {
+    left: 22%;
+    transform: translateX(0%);
   }
 
   @include tb-mq {
@@ -184,6 +188,19 @@ main {
 
 .nav-overlay__item {
   position: relative;
+  padding: 30px 0;
+
+  &::before {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100px;
+    height: 70px;
+    pointer-events: auto;
+    content: "";
+    background: transparent;
+    transform: translateX(-50%);
+  }
 
   a {
     color: #24243f;
@@ -193,6 +210,12 @@ main {
     a {
       color: #004ea2;
     }
+  }
+
+  &:has(.dropdownmenu) {
+    position: relative;
+    padding: 30px 20px 30px 0;
+    background: url(../img/common/nev_arrow.svg) no-repeat right center / 15px;
   }
 }
 
@@ -341,8 +364,24 @@ main {
 
 .dropdownmenu {
   position: absolute;
+  top: 70px;
+  left: 50%;
+  z-index: 10;
   display: none;
-  width: 100%;
+  width: 200px;
+  padding: 25px;
+  margin-top: 29px;
+  margin-bottom: 30px;
+  text-align: left;
+  background: rgb(255 255 255 / 80%);
+  border-radius: 10px;
+  transform: translateX(-50%);
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
 
   @include tb-mq {
     position: static;
