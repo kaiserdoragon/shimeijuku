@@ -1,10 +1,3 @@
-function add_script(url) {
-  let script = document.createElement("script");
-  script.src = url;
-  document.body.appendChild(script);
-}
-// 追加でjsファイルを読み込む場合は、ファイルパスを記述
-// add_script("./js/animation.min.js");　// アニメーション用js
 
 // ヘッダーのスクロール位置を取得 /////////////////////////////////////////////
 // headerの高さ分スクロールしたら、-fixedクラスをつける。
@@ -73,35 +66,72 @@ window.addEventListener("load", () => {
   }
 });
 
-// overlay-script.js
+
+// ハンバーガーメニュー
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger-overlay");
   const nav = document.querySelector(".nav-overlay");
+  const mql = window.matchMedia("(min-width: 1024px)");
+
+  if (!hamburger || !nav) return;
+
+  function isDesktop() { return mql.matches; }
+
+  // 共通の状態反映（モバイル時のみクラス・属性を効かせる）
+  function setOpen(isOpen) {
+    const desktop = isDesktop();
+
+    // PCでは .active を付けても表示は常時なので影響しないが、
+    // クラスはモバイル専用の表現として制御する
+    hamburger.classList.toggle("active", !desktop && isOpen);
+    nav.classList.toggle("active", !desktop && isOpen);
+
+    // アクセシビリティ: PCでは常時 aria-hidden=false / inert=false
+    hamburger.setAttribute("aria-expanded", String(!desktop && isOpen));
+    nav.setAttribute("aria-hidden", String(desktop ? false : !isOpen));
+
+    if ("inert" in nav) {
+      // モバイルのみフォーカス/入力を無効化
+      nav.inert = desktop ? false : !isOpen;
+      // inert はフォーカス・入力を無効化します（視覚はCSS側で制御）。:contentReference[oaicite:2]{index=2}
+    }
+
+    // 背景スクロールロックはモバイル時のみ
+    document.documentElement.classList.toggle("is-locked", !desktop && isOpen);
+  }
+
+  // ブレークポイント跨ぎ用：トランジション無効で即座に状態反映
+  function setOpenInstant(isOpen) {
+    nav.classList.add("no-transition");
+    setOpen(isOpen);
+    void nav.offsetHeight; // reflow
+    nav.classList.remove("no-transition");
+  }
+
+  // 初期状態は閉（モバイル時）。PCではCSSで常時表示されるため問題なし
+  setOpen(false);
 
   hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    nav.classList.toggle("active");
-
-    const isOpen = hamburger.classList.contains("active");
-    hamburger.setAttribute("aria-expanded", isOpen);
-    nav.setAttribute("aria-hidden", !isOpen);
-
-    // メニューオープン時に背景スクロールを防止
-    document.body.style.overflow = isOpen ? "hidden" : "";
-    // document.documentElement.style.overflow = isOpen ? "hidden" : "";
+    if (isDesktop()) return; // PCではハンバーガー無効
+    setOpen(!hamburger.classList.contains("active"));
   });
 
-  // ESCキーでメニューを閉じる
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && nav.classList.contains("active")) {
-      hamburger.classList.remove("active");
-      nav.classList.remove("active");
-      hamburger.setAttribute("aria-expanded", false);
-      nav.setAttribute("aria-hidden", true);
-      document.body.style.overflow = "";
+    if (e.key === "Escape" && !isDesktop() && nav.classList.contains("active")) {
+      setOpen(false);
     }
   });
+
+  // ブレークポイントを跨いだら“即時”で閉じる（PCに入る瞬間の残留状態を掃除）
+  mql.addEventListener("change", () => {
+    setOpenInstant(false);
+  });
 });
+
+
+
+
+
 
 (function ($, root, undefined) {
   // ドロップダウンメニュー
