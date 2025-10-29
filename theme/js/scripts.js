@@ -141,14 +141,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ドロップダウンメニュー
   $(function () {
-    $(".nav-overlay__item").hover(
-      function () {
-        $(this).children(".dropdownmenu").stop(true, true).slideDown(500);
-      },
-      function () {
-        $(this).children(".dropdownmenu").stop(true, true).slideUp(500);
+    // 画面幅のみで判定するなら '(min-width: 1025px)'
+    // タッチ主体端末での誤作動を避けたいなら hover 能力も併せて判定
+    const mql = window.matchMedia('(min-width: 1025px) and (hover: hover)'); // ←必要に応じて (hover: hover) を外す
+    const NS = '.dropdown'; // イベントの名前空間
+    const $items = $('.nav-overlay__item');
+
+    function bindHover() {
+      // 既存を一旦解除してからバインド（重複防止）
+      $items.off(NS);
+      $items
+        .on('mouseenter' + NS, function () {
+          $(this).children('.dropdownmenu').stop(true, true).slideDown(500);
+        })
+        .on('mouseleave' + NS, function () {
+          $(this).children('.dropdownmenu').stop(true, true).slideUp(500);
+        });
+    }
+
+    function unbindHover() {
+      $items.off(NS); // 名前空間付きで安全に解除
+      $items.children('.dropdownmenu').stop(true, true).hide(); // 状態リセット（任意）
+    }
+
+    function apply(e) {
+      if (e.matches) {
+        bindHover();
+      } else {
+        unbindHover();
       }
-    );
+    }
+
+    // 初期判定 & 画面幅/入力環境の変化に追随
+    apply(mql);
+    if (mql.addEventListener) {
+      mql.addEventListener('change', apply);
+    } else {
+      // 古いSafari用フォールバック
+      mql.addListener(apply);
+    }
   });
 
   // アコーディオンメニュー＋閉じるボタン

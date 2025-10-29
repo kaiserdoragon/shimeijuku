@@ -151,7 +151,9 @@ main {
   }
 
   @media (1025px <= width <= 1280px) {
-    left: 22%;
+    left: 24%;
+    gap: 25px;
+    max-width: 740px;
     transform: translateX(0%);
   }
 
@@ -161,6 +163,7 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 100%;
     background: transparent;
     border-radius: 30px;
     transform: translateX(0%);
@@ -217,9 +220,16 @@ main {
     padding: 20px 20px 20px 0;
     background: url(../img/common/nev_arrow.svg) no-repeat right center / 15px;
   }
+
+  @include tb-mq {
+    &:has(.dropdownmenu) {
+      padding: 0;
+      background: none;
+    }
+  }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1023px) {
   .nav-overlay {
     position: static;
     top: auto;
@@ -230,10 +240,10 @@ main {
     height: auto;
     overflow: visible;
     pointer-events: auto;
-    visibility: visible !important;
+    visibility: visible;
     background: transparent;
-    opacity: 1 !important;
-    transition: none !important;
+    opacity: 1;
+    transition: none;
   }
 }
 
@@ -385,7 +395,13 @@ main {
 
   @include tb-mq {
     position: static;
-    display: block;
+    display: block !important;
+    width: auto;
+    padding: 0;
+    text-align: center;
+    background: none;
+    border-radius: 0;
+    transform: translateX(0%);
   }
 }
 
