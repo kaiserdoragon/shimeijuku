@@ -365,17 +365,26 @@ document.addEventListener("DOMContentLoaded", () => {
     $doc.on("click", ".js-modal_trigger", function (e) {
       e.preventDefault();
       var $t = $(this);
-      var sel =
+
+      // ① まずは文字列（# なし）を取り出す
+      var target =
         $t.data("modalTarget") ||
         $t.attr("data-modal-target") ||
-        "#" + ($t.attr("aria-controls") || "");
-      var $modal = sel ? $(sel) : $(); // セレクタで紐づけ
+        $t.attr("aria-controls"); // aria-controls は ID を入れる属性
 
+      // ② セレクタを安全に作る（空や '#' だけは使わない）
+      var $modal = $();
+      if (target && target.trim()) {
+        var sel = target.startsWith("#") ? target : "#" + target;
+        try { $modal = $(sel); } catch (e) { $modal = $(); }
+      }
+
+      // ③ 見つからなければ index フォールバック
       if (!$modal.length) {
-        // 後方互換: index対応（可能なら属性での紐づけを推奨）
         var idx = $(".js-modal_trigger").index(this);
         $modal = $(".js-modal_contents").eq(idx);
       }
+
       openModal($modal, $t);
     });
 

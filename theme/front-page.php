@@ -232,7 +232,7 @@
   </div> -->
 
 
-
+  <!-- アコーディオンメニュー divで実装-->
   <div class="accordion js_accordion">
     <div class="accordion--inner js_accordion_list">
       <p class="accordion--title">日常に寄り添うやさしいヨガ</p>
@@ -270,7 +270,7 @@
 
 
 
-  <!-- アコーディオンメニュー -->
+  <!-- アコーディオンメニュー summaryで実装-->
   <details class="accordion_menu js-accordion">
     <summary class="js-accordion--ttl"><span class="accordion_menu--btn"></span>1つ目のアコーディオンのタイトル</summary>
     <div class="accordion_menu--content js-accordion--content">
