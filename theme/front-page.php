@@ -233,6 +233,41 @@
 
 
 
+  <div class="accordion js_accordion">
+    <div class="accordion--inner js_accordion_list">
+      <p class="accordion--title">日常に寄り添うやさしいヨガ</p>
+      <span class="accordion--icon"></span>
+    </div>
+    <div class="accordion--content">
+      <p>忙しい毎日の中で無理なく続けられる、やさしいヨガです。呼吸を整え、心と体の緊張をほどいていくことで、自然と穏やかな自分に戻ることができます。</p>
+      <button class="is-close">閉じる</button>
+    </div>
+  </div>
+  <div class="accordion js_accordion">
+    <div class="accordion--inner js_accordion_list">
+      <p class="accordion--title">エネルギーを取り戻す空間</p>
+      <span class="accordion--icon"></span>
+    </div>
+    <div class="accordion--content">
+      <p>深い息とゆるやかな連動で、からだの巡りを静かに起こします。蓄えたこわばりがほどけ、内側に温度が灯る感覚へ。終わる頃には重さが抜け、視界が澄み、意欲が息を吹き返します。</p>
+      <button class="is-close">閉じる</button>
+    </div>
+  </div>
+  <div class="accordion js_accordion">
+    <div class="accordion--inner js_accordion_list">
+      <p class="accordion--title">軽やかな自分への道しるべ</p>
+      <span class="accordion--icon"></span>
+    </div>
+    <div class="accordion--content">
+      <p>一人ひとりに合う歩幅で、姿勢とバランスを丁寧に整えていきます。呼吸のリズムに合わせて小さなステップを積み重ね、身のこなしをしなやかに。習慣が育つほど心持ちが軽くなり、日々の選択も明確に見えてきます。</p>
+      <button class="is-close">閉じる</button>
+    </div>
+  </div>
+
+
+
+
+
 
 
   <!-- アコーディオンメニュー -->

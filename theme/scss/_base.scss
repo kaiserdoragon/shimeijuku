@@ -664,3 +664,95 @@ summary::-webkit-details-marker {
     }
   }
 }
+
+
+
+
+
+/* アコーディオンメニュー */
+.accordion {
+  box-sizing: border-box;
+  padding: 0 30px;
+  border-bottom: 1px solid #e8e8e8;
+
+  // .accordion--inner
+  &--inner {
+    position: relative;
+    padding: 20px 0;
+    cursor: pointer;
+  }
+
+  // .accordion--title
+  &--title {
+    font-size: var(--fz20);
+    font-weight: 500;
+  }
+
+  // .accordion--icon
+  &--icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 16px;
+    height: 16px;
+    transform: translateY(-50%);
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: "";
+      background-color: #333;
+      transition: transform 0.3s;
+    }
+
+    &::before {
+      width: 2px;
+      height: 16px;
+      margin-left: -1px;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      width: 16px;
+      height: 2px;
+      margin-top: -1px;
+      transform: translateX(-50%);
+    }
+  }
+
+  // .accordion--content
+  &--content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+
+    p {
+      padding-bottom: 20px;
+    }
+  }
+
+  // .accordion--wrap
+  &--wrap {
+    width: min(660px, 100%);
+
+    @include tb-mq {
+      margin-bottom: 60px;
+    }
+  }
+
+  @media (width <= 1900px) {
+    width: 37vw;
+  }
+
+  @include tb-mq {
+    width: auto;
+    padding: 0;
+  }
+}
+
+/* 開いているときは縦線を非表示に */
+.is-active .accordion--icon::before {
+  transform: translateY(-50%) rotate(90deg);
+}
