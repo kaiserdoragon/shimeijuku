@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 変数に要素を入れる
   var trigger = $('.js-modal_trigger'),
-    wrapper = $('.modal__wrapper'),
+    wrapper = $('.modal_contents'),
     layer = $('.modal__layer'),
     container = $('.modal__container'),
     close = $('.modal__close');

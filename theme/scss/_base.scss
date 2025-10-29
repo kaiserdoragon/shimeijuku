@@ -588,14 +588,12 @@ summary::-webkit-details-marker {
 }
 
 
-.modal__trigger {
+.js-modal_trigger {
   cursor: pointer;
 }
 
-
-
 /* モーダル本体 */
-.modal__wrapper {
+.modal_contents {
   position: fixed;
   top: 0;
   left: 0;
