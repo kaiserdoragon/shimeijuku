@@ -473,6 +473,109 @@ summary::-webkit-details-marker {
 }
 
 // ---------------------------------------------
+//  モーダルウィンドウ
+// ---------------------------------------------
+
+
+.modalwindow {
+  ul {
+    display: flex;
+  }
+
+  li {
+    transition: opacity 0.6s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+/* モーダルのトリガー */
+.js-modal_trigger {
+  cursor: pointer;
+}
+
+/* モーダルの全体 */
+.js-modal_contents {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* モーダルの裏地 */
+.js-modal_layer {
+  height: 100%;
+  cursor: pointer;
+  background: rgb(50 50 50 / 85%);
+}
+
+/* モーダルのコンテンツ部分 */
+.js-modal_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(calc(100% - 40px), 1000px);
+  height: calc(100% - 40px);
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
+
+/* モーダルを閉じるボタン */
+.js-modal_close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  background: rgb(50 50 50 / 100%);
+  transition: opacity 0.6s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 1px;
+    content: "";
+    background: #fff;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+/* HTMLとbodyタグに動的に付与 */
+.is-modal-open {
+  overflow: hidden;
+}
+
+.modal__inner {
+  position: relative;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+
+
+
+
+// ---------------------------------------------
 //  フッター関連
 // ---------------------------------------------
 
@@ -545,123 +648,3 @@ summary::-webkit-details-marker {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ---------------------------------------------
-//  モーダルウィンドウ
-// ---------------------------------------------
-
-
-.modalwindow {
-  ul {
-    display: flex;
-  }
-
-  li {
-    transition: opacity 0.6s;
-
-    &:hover {
-      opacity: 0.6;
-    }
-  }
-}
-
-
-.js-modal_trigger {
-  cursor: pointer;
-}
-
-/* モーダル本体 */
-.modal_contents {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  display: none;
-  width: 100%;
-  height: 100%;
-}
-
-.modal__layer {
-  height: 100%;
-  cursor: pointer;
-  background: rgb(50 50 50 / 85%);
-}
-
-.modal__container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: min(calc(100% - 40px), 1000px);
-  height: calc(100% - 40px);
-  background: #fff;
-  transform: translate(-50%, -50%);
-}
-
-.modal__inner {
-  position: relative;
-  height: 100%;
-  overflow-y: scroll;
-}
-
-/* モーダルを閉じるボタン */
-.modal__close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
-  background: rgb(50 50 50 / 100%);
-  transition: opacity 0.6s;
-}
-
-.modal__close:hover {
-  opacity: 0.6;
-}
-
-.modal__close::before,
-.modal__close::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20px;
-  height: 1px;
-  content: "";
-  background: #fff;
-}
-
-.modal__close::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.modal__close::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-
-
-
-
-

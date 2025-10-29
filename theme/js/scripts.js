@@ -138,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 (function ($, root, undefined) {
+
   // ドロップダウンメニュー
   $(function () {
     $(".nav-overlay__item").hover(
@@ -149,7 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
   });
-
 
   // アコーディオンメニュー＋閉じるボタン
   $(document).ready(function () {
@@ -184,33 +184,125 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+  // モーダルウィンドウ
+  (function ($) {
+    var $doc = $(document);
+    var FOCUSABLE = 'a[href],area[href],input:not([disabled]):not([type="hidden"]),select:not([disabled]),textarea:not([disabled]),button:not([disabled]),iframe,object,embed,[contenteditable],[tabindex]:not([tabindex="-1"])';
+    var lastFocused = null;
+
+    function lockScroll() {
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      $('body').data('scrollY', y)
+        .css({ position: 'fixed', top: -y + 'px', width: '100%' })
+        .addClass('is-modal-open');
+      $('html').addClass('is-modal-open');
+    }
+
+    function unlockScroll() {
+      var y = $('body').data('scrollY') || 0;
+      $('html, body').removeClass('is-modal-open');
+      $('body').css({ position: '', top: '', width: '' }).removeData('scrollY');
+      window.scrollTo(0, y);
+    }
+
+    function openModal($modal, $trigger) {
+      if (!$modal || !$modal.length) return;
+
+      lastFocused = ($trigger && $trigger.length) ? $trigger : $(document.activeElement);
+
+      // そのモーダル内だけスクロール位置をリセット
+      $modal.find('.js-modal_container').scrollTop(0);
+
+      $modal.attr('aria-hidden', 'false').fadeIn(300);
+      if ($trigger && $trigger.length) $trigger.attr('aria-expanded', 'true');
+
+      lockScroll();
+
+      // 初期フォーカス
+      var $first = $modal.find('[autofocus]').filter(':visible').first();
+      if (!$first.length) $first = $modal.find(FOCUSABLE).filter(':visible').first();
+      if ($first.length) $first.focus();
+
+      // Esc & 簡易フォーカストラップ
+      $doc.on('keydown.modal', function (e) {
+        var key = e.key || e.keyCode;
+        if (key === 'Escape' || key === 27) {
+          closeModal($modal);
+        } else if (key === 'Tab' || key === 9) {
+          var $focusables = $modal.find(FOCUSABLE).filter(':visible');
+          if (!$focusables.length) return;
+          var first = $focusables.get(0);
+          var last = $focusables.get($focusables.length - 1);
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); $(last).focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); $(first).focus(); }
+        }
+      });
+    }
+
+    function closeModal($modal) {
+      if (!$modal || !$modal.length) return;
+
+      $modal.attr('aria-hidden', 'true').fadeOut(300, function () {
+        if (lastFocused && lastFocused.length) lastFocused.focus();
+      });
+
+      // 対応するトリガーの状態を戻す
+      var id = $modal.attr('id');
+      if (id) $('[aria-controls="' + id + '"]').attr('aria-expanded', 'false');
+
+      $doc.off('keydown.modal');
+      unlockScroll();
+    }
+
+    // --- イベント委譲（動的要素にも対応） ---
+    // 開く
+    $doc.on('click', '.js-modal_trigger', function (e) {
+      e.preventDefault();
+      var $t = $(this);
+      var sel = $t.data('modalTarget') || $t.attr('data-modal-target') || ('#' + ($t.attr('aria-controls') || ''));
+      var $modal = sel ? $(sel) : $(); // セレクタで紐づけ
+
+      if (!$modal.length) {
+        // 後方互換: index対応（可能なら属性での紐づけを推奨）
+        var idx = $('.js-modal_trigger').index(this);
+        $modal = $('.js-modal_contents').eq(idx);
+      }
+      openModal($modal, $t);
+    });
+
+    // 背景 or 閉じるボタンで閉じる
+    $doc.on('click', '.js-modal_layer, .js-modal_close', function (e) {
+      e.preventDefault();
+      closeModal($(this).closest('.js-modal_contents'));
+    });
+
+  })(jQuery);
 
 
-  // 変数に要素を入れる
-  var trigger = $('.js-modal_trigger'),
-    wrapper = $('.modal_contents'),
-    layer = $('.modal__layer'),
-    container = $('.modal__container'),
-    close = $('.modal__close');
 
-  // 『モーダルを開くボタン』をクリックしたら、『モーダル本体』を表示
-  $(trigger).click(function () {
-    var index = $(this).index();
-    $(wrapper).eq(index).fadeIn(400);
 
-    // スクロール位置を戻す
-    $(container).scrollTop(0);
+  // モーダルウィンドウ（旧式）
+  // var trigger = $('.js-modal_trigger'),
+  //   wrapper = $('.js-modal_contents'),
+  //   layer = $('.js-modal_layer'),
+  //   container = $('.js-modal_container'),
+  //   close = $('.js-modal_close');
 
-    // サイトのスクロールを禁止にする
-    $('html, body').css('overflow', 'hidden');
-  });
 
-  // 『背景』と『モーダルを閉じるボタン』をクリックしたら、『モーダル本体』を非表示
-  $(layer).add(close).click(function () {
-    $(wrapper).fadeOut(400);
+  // $(trigger).click(function () {
+  //   var index = $(this).index();
+  //   $(wrapper).eq(index).fadeIn(400);
+  //   $(container).scrollTop(0);
+  //   $('html, body').css('overflow', 'hidden');
+  // });
 
-    // サイトのスクロール禁止を解除する
-    $('html, body').removeAttr('style');
-  });
+  // $(layer).add(close).click(function () {
+  //   $(wrapper).fadeOut(400);
+  //   $('html, body').removeAttr('style');
+  // });
+
+
+
+
 
 })(jQuery, this);

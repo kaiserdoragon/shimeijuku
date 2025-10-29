@@ -218,7 +218,7 @@
 
 
 
-
+  <!-- スライダー -->
   <!-- <div class="swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">Slide 1</div>
@@ -235,10 +235,7 @@
 
 
 
-
-
-
-
+  <!-- アコーディオンメニュー -->
   <details class="accordion_menu js-accordion">
     <summary class="js-accordion--ttl"><span class="accordion_menu--btn"></span>1つ目のアコーディオンのタイトル</summary>
     <div class="accordion_menu--content js-accordion--content">
@@ -271,6 +268,7 @@
 
 
 
+  <!-- モーダルウィンドウ -->
   <ul>
     <li class="js-modal_trigger">
       <img src="https://placehold.jp/600x400.png" alt="">
@@ -286,13 +284,13 @@
     </li>
   </ul>
 
-  <div class="modal_contents">
-    <div class="modal__layer"></div>
-    <div class="modal__container">
+  <div class="js-modal_contents">
+    <div class="js-modal_layer"></div>
+    <div class="js-modal_container">
       <div class="modal__inner">
 
         <!-- モーダルを閉じるボタン -->
-        <div class="modal__close">閉じる</div>
+        <div class="js-modal_close">閉じる</div>
         <!-- / モーダルを閉じるボタン -->
 
         <!-- モーダル内のコンテンツ -->
@@ -351,13 +349,13 @@
     </div>
   </div>
 
-  <div class="modal_contents">
-    <div class="modal__layer"></div>
-    <div class="modal__container">
+  <div class="js-modal_contents">
+    <div class="js-modal_layer"></div>
+    <div class="js-modal_container">
       <div class="modal__inner">
 
         <!-- モーダルを閉じるボタン -->
-        <div class="modal__close"></div>
+        <div class="js-modal_close"></div>
         <!-- / モーダルを閉じるボタン -->
 
         <!-- モーダル内のコンテンツ -->
@@ -374,13 +372,13 @@
     </div>
   </div>
 
-  <div class="modal_contents">
-    <div class="modal__layer"></div>
-    <div class="modal__container">
+  <div class="js-modal_contents">
+    <div class="js-modal_layer"></div>
+    <div class="js-modal_container">
       <div class="modal__inner">
 
         <!-- モーダルを閉じるボタン -->
-        <div class="modal__close"></div>
+        <div class="js-modal_close"></div>
         <!-- / モーダルを閉じるボタン -->
 
         <!-- モーダル内のコンテンツ -->
@@ -396,6 +394,8 @@
       </div>
     </div>
   </div>
+
+
 
 
 
