@@ -133,6 +133,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
+
 (function ($, root, undefined) {
   // ドロップダウンメニュー
   $(function () {
@@ -145,4 +149,39 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
   });
+
+
+  // アコーディオンメニュー＋閉じるボタン
+  $(document).ready(function () {
+    let accordionDetails = '.js-accordion';
+    let accordionSummary = '.js-accordion--ttl';
+    let accordionContent = '.js-accordion--content';
+    let speed = 500;
+
+    $(accordionSummary).each(function () {
+      $(this).on("click", function (event) {
+        $(this).toggleClass("is-active");
+        event.preventDefault();
+        if ($(this).parent($(accordionDetails)).attr("open")) {
+          $(this).nextAll($(accordionContent)).slideUp(speed, function () {
+            $(this).parent($(accordionDetails)).removeAttr("open");
+            $(this).show();
+          });
+        } else {
+          $(this).parent($(accordionDetails)).attr("open", "true");
+          $(this).nextAll($(accordionContent)).hide().slideDown(speed);
+        }
+      });
+
+      $(this).closest(accordionDetails).find('.close-btn').on('click', function (eventclosee) {
+        eventclosee.preventDefault();
+        $(this).closest(accordionDetails).find(accordionSummary).removeClass("is-active");
+        $(this).closest(accordionContent).slideUp(speed, function () {
+          $(this).closest(accordionDetails).removeAttr("open");
+        });
+      });
+    });
+  });
+
+
 })(jQuery, this);

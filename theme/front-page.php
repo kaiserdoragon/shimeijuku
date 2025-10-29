@@ -213,6 +213,12 @@
     </div>
     <address class="googlemap--address">真明塾　名古屋市西区花原町47番</address>
   </div>
+
+
+
+
+
+
   <!-- <div class="swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">Slide 1</div>
@@ -224,5 +230,44 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-scrollbar"></div>
   </div> -->
+
+
+
+
+
+
+
+
+
+  <details class="accordion_menu js-accordion">
+    <summary class="js-accordion--ttl"><span class="accordion_menu--btn"></span>1つ目のアコーディオンのタイトル</summary>
+    <div class="accordion_menu--content js-accordion--content">
+      <p>ここは、1つ目のアコーディオンの中身です。</p>
+      <button class="close-btn">閉じる</button>
+    </div>
+  </details>
+  <details class="accordion_menu js-accordion">
+    <summary class="js-accordion--ttl"><span class="accordion_menu--btn"></span>2つ目のアコーディオンのタイトル</summary>
+    <div class="accordion_menu--content js-accordion--content">
+      <p>ここは、2つ目のアコーディオンの中身です。ここは、2つ目のアコーディオンの中身です。ここは、2つ目のアコーディオンの中身です。ここは、2つ目のアコーディオンの中身です。</p>
+      <p>ここは、2つ目のアコーディオンの中身です。ここは、2つ目のアコーディオンの中身です。ここは、2つ目のアコーディオンの中身です。<br>
+        ここは、2つ目のアコーディオンの中身です。ここは、2つ目のアコーディオンの中身です。
+      </p>
+      <button class="close-btn">閉じる</button>
+    </div>
+  </details>
+  <details class="accordion_menu js-accordion">
+    <summary class="js-accordion--ttl"><span class="accordion_menu--btn"></span>3つ目のアコーディオンのタイトル</summary>
+    <div class="accordion_menu--content js-accordion--content">
+      <p>ここは、3つ目のアコーディオンの中身です。ここは、3つ目のアコーディオンの中身です。</p>
+      <p>ここは、3つ目のアコーディオンの中身です。</p>
+      <p>ここは、3つ目のアコーディオンの中身です。<br>
+        ここは、3つ目のアコーディオンの中身です。ここは、3つ目のアコーディオンの中身です。ここは、3つ目のアコーディオンの中身です。ここは、3つ目のアコーディオンの中身です。ここは、3つ目のアコーディオンの中身です。
+      </p>
+      <button class="close-btn">閉じる</button>
+    </div>
+  </details>
+
+
 </main>
 <?php get_footer(); ?>
