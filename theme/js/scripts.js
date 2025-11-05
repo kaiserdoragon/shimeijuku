@@ -395,22 +395,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   })(jQuery);
 
-  // モーダルウィンドウ（旧式）
-  // var trigger = $('.js-modal_trigger'),
-  //   wrapper = $('.js-modal_contents'),
-  //   layer = $('.js-modal_layer'),
-  //   container = $('.js-modal_container'),
-  //   close = $('.js-modal_close');
-
-  // $(trigger).click(function () {
-  //   var index = $(this).index();
-  //   $(wrapper).eq(index).fadeIn(400);
-  //   $(container).scrollTop(0);
-  //   $('html, body').css('overflow', 'hidden');
-  // });
-
-  // $(layer).add(close).click(function () {
-  //   $(wrapper).fadeOut(400);
-  //   $('html, body').removeAttr('style');
-  // });
 })(jQuery, this);
