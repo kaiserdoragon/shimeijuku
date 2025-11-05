@@ -30,20 +30,24 @@
 						<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/features')); ?>">真明塾について</a></li>
 						<li class="nav-overlay__item">
 							<a href="<?php echo esc_url(home_url('/courses')); ?>">コース紹介</a>
-							<ul class="dropdownmenu">
-								<li><a href="https://example.com/">小学部 公立中進学科</a></li>
-								<li><a href="https://example.com/">中学部 高校受験科</a></li>
-								<li><a href="https://example.com/">高校部 大学受験科</a></li>
-							</ul>
+							<div class="dropdownmenu">
+								<ul>
+									<li><a href="https://example.com/">小学部 公立中進学科</a></li>
+									<li><a href="https://example.com/">中学部 高校受験科</a></li>
+									<li><a href="https://example.com/">高校部 大学受験科</a></li>
+								</ul>
+							</div>
 						</li>
 						<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/trial')); ?>">無料体験授業</a></li>
 						<li class="nav-overlay__item">
 							<a href="<?php echo esc_url(home_url('/trial')); ?>">実績・塾生の声</a>
-							<ul class="dropdownmenu">
-								<li><a href="https://example.com/">合格・成績向上実績</a></li>
-								<li><a href="https://example.com/">合格体験記</a></li>
-								<li><a href="https://example.com/">塾生の声</a></li>
-							</ul>
+							<div class="dropdownmenu">
+								<ul>
+									<li><a href="https://example.com/">小学部 公立中進学科</a></li>
+									<li><a href="https://example.com/">中学部 高校受験科</a></li>
+									<li><a href="https://example.com/">高校部 大学受験科</a></li>
+								</ul>
+							</div>
 						</li>
 						<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/policy')); ?>">教室概要</a></li>
 						<li class="nav-overlay__item"><a href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a></li>

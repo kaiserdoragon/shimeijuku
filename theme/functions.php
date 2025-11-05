@@ -447,3 +447,19 @@ add_action(
   },
   11 // 優先度を少し高く設定 (デフォルトは10)
 );
+
+
+
+
+add_action('init', function () {
+  add_rewrite_rule(
+    '^news/([0-9]{4})/?$',
+    'index.php?year=$matches[1]&post_type=post',
+    'top'
+  );
+});
+
+// 生成する年リンクも /news/YYYY/ に統一したい場合（任意）
+add_filter('year_link', function ($url, $year) {
+  return home_url("/news/$year/");
+}, 10, 2);

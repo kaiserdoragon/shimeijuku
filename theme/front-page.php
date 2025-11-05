@@ -167,8 +167,8 @@
                   </a>
                 <?php endif; ?>
                 <dl>
-                  <dt>
-                    <a href="<?php the_permalink(); ?>">
+                  <a href="<?php the_permalink(); ?>">
+                    <dt>
                       <?php
                       if (mb_strlen($post->post_title) > 30) {
                         $title = mb_substr($post->post_title, 0, 30);
@@ -177,11 +177,9 @@
                         echo $post->post_title;
                       }
                       ?>
-                    </a>
-                  </dt>
-                  <dd><span><?php the_time('Y年m月d日'); ?></span></dd>
-                  <dd>
-                    <a href="<?php the_permalink(); ?>">
+                    </dt>
+                    <dd><span><?php the_time('Y年m月d日'); ?></span></dd>
+                    <dd>
                       <?php
                       if (mb_strlen($post->post_content, 'UTF-8') > 30) {
                         $content = str_replace('\n', '', mb_substr(strip_tags($post->post_content), 0, 30, 'UTF-8'));
@@ -190,8 +188,8 @@
                         echo str_replace('\n', '', strip_tags($post->post_content));
                       }
                       ?>
-                    </a>
-                  </dd>
+                    </dd>
+                  </a>
                 </dl>
               </li>
           <?php endforeach;
@@ -232,7 +230,7 @@
   </div> -->
 
 
-  <!-- アコーディオンメニュー divで実装-->
+  <!-- アコーディオン divでの実装 -->
   <div class="accordion js_accordion">
     <div class="accordion--inner js_accordion_list">
       <p class="accordion--title">日常に寄り添うやさしいヨガ</p>
@@ -266,11 +264,7 @@
 
 
 
-
-
-
-
-  <!-- アコーディオンメニュー summaryで実装-->
+  <!-- アコーディオン detailでの実装-->
   <details class="accordion_menu js-accordion">
     <summary class="js-accordion--ttl"><span class="accordion_menu--btn"></span>1つ目のアコーディオンのタイトル</summary>
     <div class="accordion_menu--content js-accordion--content">
