@@ -42,7 +42,7 @@
   ?>
 
 
-  <p>最新投稿</p>
+  <p>【最新投稿】</p>
   <ul>
     <?php
     $args = array(
@@ -61,6 +61,9 @@
     ?>
   </ul>
 
+
+
+  <p>【年別アーカイブ】</p>
   <?php
   // 年アーカイブURLを /news/YYYY/ に
   add_filter('year_link', function ($link, $year) {
@@ -91,7 +94,7 @@
   echo '</ul>';
   ?>
 
-
+  <p>【カテゴリー一覧】</p>
   <?php $cats = get_categories(); ?>
   <?php foreach ($cats as $cat) : ?>
     <article>
