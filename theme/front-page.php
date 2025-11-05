@@ -423,7 +423,12 @@
       </div>
     </div>
   </div>
-
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
   <!-- タブ切り替え -->
   <div class="tab_switching">
@@ -448,6 +453,82 @@
     <div class="tab_switching--contents fade-panel" id="tab4">
       <h3>タブ4のコンテンツ</h3>
       <p>これはタブ4の内容です。フェード効果で表示されます。</p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- もっと見る・続きを読む -->
+  <!-- <div class="viewmore js-viewmore">
+    <div>
+      <p>もっと見るのタイトル</p>
+    </div>
+    <div>
+      <p>ここにデフォルトで表示するテキストを入力します。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <p class="viewmore--contents js-viewmore_contents">ここに「もっと見る」ボタンをクリックで表示するテキストを入力します。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="viewmore--btn js-viewmore_btn">
+        <p class="viewmore--btn_txt is-active js-viewmore_btn_txt">もっと見る</p>
+        <p class="viewmore--btn_txt js-viewmore_btn_txt">閉じる</p>
+      </div>
+    </div>
+  </div>
+  <div class="viewmore js-viewmore">
+    <div>
+      <p>もっと見るのタイトル</p>
+    </div>
+    <div>
+      <p>ここにデフォルトで表示するテキストを入力します。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <p class="viewmore--contents js-viewmore_contents">ここに「もっと見る」ボタンをクリックで表示するテキストを入力します。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="viewmore--btn js-viewmore_btn">
+        <p class="viewmore--btn_txt is-active js-viewmore_btn_txt">もっと見る</p>
+        <p class="viewmore--btn_txt js-viewmore_btn_txt">閉じる</p>
+      </div>
+    </div>
+  </div>
+  <div class="viewmore js-viewmore">
+    <div>
+      <p>もっと見るのタイトル</p>
+    </div>
+    <div>
+      <p>ここにデフォルトで表示するテキストを入力します。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <p class="viewmore--contents js-viewmore_contents">ここに「もっと見る」ボタンをクリックで表示するテキストを入力します。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="viewmore--btn js-viewmore_btn">
+        <p class="viewmore--btn_txt is-active js-viewmore_btn_txt">もっと見る</p>
+        <p class="viewmore--btn_txt js-viewmore_btn_txt">閉じる</p>
+      </div>
+    </div>
+  </div>
+  <div class="viewmore js-viewmore">
+    <div>
+      <p>もっと見るのタイトル</p>
+    </div>
+    <div>
+      <p>ここにデフォルトで表示するテキストを入力します。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <p class="viewmore--contents js-viewmore_contents">ここに「もっと見る」ボタンをクリックで表示するテキストを入力します。テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="viewmore--btn js-viewmore_btn">
+        <p class="viewmore--btn_txt is-active js-viewmore_btn_txt">もっと見る</p>
+        <p class="viewmore--btn_txt js-viewmore_btn_txt">閉じる</p>
+      </div>
+    </div>
+  </div> -->
+
+
+  <div id="app">
+    <div class="more">
+      <div class="more__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      </div>
+      <button class="more__btn">もっと見る</button>
+    </div>
+    <div class="more">
+      <div class="more__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      </div>
+      <button class="more__btn">もっと見る</button>
     </div>
   </div>
 
