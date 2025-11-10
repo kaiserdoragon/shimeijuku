@@ -525,6 +525,44 @@
     <button class="viewmore--btn">もっと見る</button>
   </div>
 
+  <!-- スクロールテーブル -->
+  <div class="scroll_table js-scrolltable">
+    <table>
+      <thead>
+        <tr>
+          <th>商品A</th>
+          <th>商品B</th>
+          <th>商品C</th>
+          <th>商品D</th>
+          <th>商品E</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>サンプルテキスト</td>
+          <td>サンプルテキスト</td>
+          <td>サンプルテキスト</td>
+          <td>サンプルテキスト</td>
+          <td>サンプルテキスト</td>
+        </tr>
+        <tr>
+          <td>サンプルテキスト</td>
+          <td>サンプルテキスト</td>
+          <td>サンプルテキスト</td>
+          <td>サンプルテキスト</td>
+          <td>サンプルテキスト</td>
+        </tr>
+        <tr>
+          <td>サンプルテキスト</td>
+          <td>サンプルテキスト</td>
+          <td>サンプルテキスト</td>
+          <td>サンプルテキスト</td>
+          <td>サンプルテキスト</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 
 
 </main>
