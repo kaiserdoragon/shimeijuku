@@ -76,6 +76,10 @@ function allsite_style_script()
   wp_register_style('swipercss', get_template_directory_uri() . '/css/swiper-bundle.min.css', array());
   wp_enqueue_style('swipercss');
 
+  // Scroll hint CSS
+  wp_register_style('scrollhintcss', get_template_directory_uri() . '/css/scroll-hint.css', array());
+  wp_enqueue_style('scrollhintcss');
+
   // Typekit Webフォント
   wp_register_style('typekit', 'https://use.typekit.net/xmz2vxu.css', array(), null);
   wp_enqueue_style('typekit');
@@ -97,6 +101,10 @@ function header_style_script()
     //swiper-bundle.min.jsの読み込み
     wp_register_script('swiperjs', get_template_directory_uri() . '/js/swiper-bundle.min.js', array('jquery'));
     wp_enqueue_script('swiperjs');
+
+    //scroll-hint.min.jsの読み込み
+    wp_register_script('scrollhint', get_template_directory_uri() . '/js/scroll-hint.min.js', array('jquery'));
+    wp_enqueue_script('scrollhint');
 
     //テーマ用のjsファイルを読み込み
     wp_register_script('mainscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'));
@@ -144,7 +152,7 @@ add_action('wp_enqueue_scripts', 'header_style_script');
 //★deferだと動作しない場合は、jquery-coreについてはdeferをやめると良い。
 function add_defer_script($tag, $handle, $url)
 {
-  if ('jquery-migrate' === $handle || 'mainscripts' === $handle || 'slider' === $handle || 'animation' === $handle || 'particles' === $handle || 'app' === $handle || 'circle' === $handle) {
+  if ('jquery-migrate' === $handle || 'mainscripts' === $handle || 'slider' === $handle || 'animation' === $handle || 'particles' === $handle || 'app' === $handle || 'circle' === $handle || 'scrollhint' === $handle) {
     $tag = '<script src="' . esc_url($url) . '" defer></script>';
   }
   return $tag;
@@ -426,7 +434,7 @@ add_action(
       }
     );
   </script>
-<?php
+  <?php
     // バッファリングしたJavaScriptコードを取得
     $data = ob_get_clean();
 
@@ -465,3 +473,25 @@ add_action('init', function () {
 add_filter('year_link', function ($url, $year) {
   return home_url("/news/$year/");
 }, 10, 2);
+
+
+// -------------------------------------
+// 管理画面にて投稿タイプを確認する
+// -------------------------------------
+
+function notices_post_type()
+{
+  global $post_type; ?>
+  <div class="updated">
+    <p>is_single : <?php var_dump(is_single()); ?></p>
+    <p>is_page : <?php var_dump(is_page()); ?></p>
+    <p>post_type :
+      <?php
+      $post_type = get_post_type($post);
+      echo $post_type;
+      ?>
+    </p>
+  </div>
+<?php
+}
+add_action('admin_notices', 'notices_post_type');

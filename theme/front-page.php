@@ -50,20 +50,26 @@
       <p>自由に書き込みができる場所です。</p>
       <div class="post_content">
         <?php
+        // 最新投稿を1件だけ取得するサブループ
         $args = array(
-          'posts_per_page' => 1
+          'post_type'           => 'post', // 投稿タイプ
+          'posts_per_page'      => 1,      // 取得件数
+          'ignore_sticky_posts' => 1,      // 先頭固定投稿を無視（必要に応じて調整）
+          'no_found_rows'       => true,   // ページネーションを使わないので高速化
         );
-        $posts = get_posts($args);
-        foreach ($posts as $post):
-          setup_postdata($post);
+
+        $the_query = new WP_Query($args);
         ?>
-          <div>
+
+        <?php if ($the_query->have_posts()) : ?>
+          <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
             <?php the_content(); ?>
-          </div>
-        <?php
-        endforeach;
-        wp_reset_postdata();
-        ?>
+          <?php endwhile; ?>
+        <?php else : ?>
+          <?php esc_html_e('まだ投稿がありません。', 'origintheme'); ?>
+        <?php endif; ?>
+
+        <?php wp_reset_postdata(); ?>
       </div>
     </div>
   </section>
@@ -530,7 +536,7 @@
   <br>
   <br>
   <!-- スクロールテーブル -->
-  <div class="scroll_table js-scrolltable">
+  <div class="scroll_table js-scrollable">
     <table>
       <thead>
         <tr>
