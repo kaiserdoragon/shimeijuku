@@ -118,6 +118,10 @@ function header_style_script()
     wp_register_script('animation', get_template_directory_uri() . '/js/animation.js', array('jquery'));
     wp_enqueue_script('animation');
 
+    //検証制御
+    wp_register_script('prohibited', get_template_directory_uri() . '/js/prohibited.js', array('jquery'));
+    wp_enqueue_script('prohibited');
+
 
     //パーティクル用のjsファイルを読み込み（下記3つ必要。コードの記載は「circle.js」）
     wp_register_script('particles', get_template_directory_uri() . '/js/particles.js', array('jquery'));
